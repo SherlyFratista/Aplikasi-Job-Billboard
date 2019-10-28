@@ -1,0 +1,5 @@
+.img-fluid {    
+    min-height: 100%;
+    min-width: 100%;
+    filter: brightness(50%);
+}
