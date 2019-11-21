@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2019 at 01:20 PM
+-- Generation Time: Nov 21, 2019 at 06:43 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -61,6 +61,56 @@ INSERT INTO `post` (`id`, `title`, `deadline`, `description`, `poster`, `kategor
 (19, 'Pendaftaran Asisten Pengembangan Produk 2019', NULL, NULL, 'images/asprak8.jpeg', 'Asisten1'),
 (20, 'Dibutuhkan segera tutor mata kuliah Statistika Industri', NULL, NULL, 'images/tutor2.jpg', 'Tutor');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `todo`
+--
+
+CREATE TABLE `todo` (
+  `id` int(200) NOT NULL,
+  `todo` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `todo`
+--
+
+INSERT INTO `todo` (`id`, `todo`) VALUES
+(1, 'Maintenance Sistem'),
+(2, 'Update Fitur'),
+(3, 'Usability Testing untuk User'),
+(4, 'Login Session'),
+(5, 'Menambah fitur Feedback aplikasi'),
+(6, 'Update lowongan job');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(200) NOT NULL,
+  `fname` varchar(200) DEFAULT NULL,
+  `lname` varchar(200) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  `username` varchar(200) DEFAULT NULL,
+  `password` varchar(200) DEFAULT NULL,
+  `status` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `fname`, `lname`, `email`, `username`, `password`, `status`) VALUES
+(1, 'Syfa', 'Nur Lathifah', 'syfanur31@gmail.com', 'SYF', '31082000', 'admin'),
+(2, 'Lee', 'Jae Wook', 'baekyung@gmail.com', 'Baekyung', '12345', 'student'),
+(3, 'Abdullah', '-', 'abdul@gmail.com', 'Abdul123', '123', 'lecturer'),
+(4, 'Sherly', 'Fratista', 'sher@gmail.com', 'sherrr', '12345', 'admin'),
+(5, 'Eun', 'Dan Oh', 'danoh@gmail.com', 'Hello123', '12345', 'student');
+
 --
 -- Indexes for dumped tables
 --
@@ -72,6 +122,18 @@ ALTER TABLE `post`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `todo`
+--
+ALTER TABLE `todo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -80,6 +142,18 @@ ALTER TABLE `post`
 --
 ALTER TABLE `post`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `todo`
+--
+ALTER TABLE `todo`
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
