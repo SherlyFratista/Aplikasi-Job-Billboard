@@ -58,46 +58,59 @@
                         <h3>Let's Post your new Job Vacancies Here!</h3>
                     </div>
                 </div>
-                <div class="col-md-9">
-                    <div class="contact-form">
-                        <div class="form-group">
-                            <br>
-                          <label class="control-label col-sm-2" >Title</label>
-                          <div class="col-sm-10">          
-                            <input type="text" class="form-control" id="judul" placeholder="Enter Title Here" name="fname">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                            <form>
-                          <label class="control-label col-sm-2" for="lname">Deadline</label>
-                          <div class="col-sm-10">          
-                                <input type="date" class="form-control" name="deadline">
-                            
-                            </div>
-                        </form>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label col-sm-2">Description</label>
-                          <div class="col-sm-10">
-                            <textarea class="form-control" id="desc" rows="7" placeholder="Enter Description here" name="email"></textarea>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                                <label class="control-label col-sm-2">Poster</label>
-                                <div class="col-sm-10">
-                                <input type="file" id="BSbtninfo">
-                                 </div>
-                                </div>
-                                <br>
-                        <div class="form-group">        
-                          <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Submit</button>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="col-md-9">
+    <div class="contact-form">
+
+    <div class="form-group">
+    <form action = create.php method="POST">
+        <br>
+        <label class="control-label col-sm-2" >Title</label>
+        <div class="col-sm-10">          
+        <input type="text" class="form-control" id="judul" placeholder="Enter Title Here" name="title">
         </div>
+    </div>
+                       
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="lname">Deadline</label>
+        <div class="col-sm-10">          
+        <input type="date" class="form-control" name="deadline">
+        </div>
+    </div>
+                        
+    <div class="form-group">
+        <label class="control-label col-sm-2">Description</label>
+        <div class="col-sm-10">
+        <textarea class="form-control" id="desc" rows="7" placeholder="Enter Description here" name="description"></textarea>
+        </div>
+    </div>
+                        
+    <div class="form-group">
+        <label class="control-label col-sm-2">Category</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" id="judul" placeholder="Enter Category Here" name="category">
+        </div>
+    </div>
+                        
+    <div class="form-group">
+        <label class="control-label col-sm-2">Poster</label>
+        <div class="col-sm-10">
+        <input type="file" id="BSbtninfo">
+        </div>
+    </div>
+                        
+    <div class="form-group">        
+    <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" name="submit"></button>
+    </div>
+    </div>
+    
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
         
 <footer style="background-color: #f9dc24">
 		<div class="container-fluid text-center text-md-left">

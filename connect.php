@@ -1,8 +1,8 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "jobbillboard");
+$host="localhost";
+$user="root";
+$password="";
+$database="jobbillboard";
 
-if(!$conn){
-    echo "<script>alert('Failed Connect into Database');</script>";
-}
-
+$conn=mysqli_connect($host,$user,$password,$database) or die("Failed connect to database");
 ?>
