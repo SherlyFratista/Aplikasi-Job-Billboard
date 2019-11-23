@@ -30,7 +30,7 @@
 <body style="background-color: #FFFACD">
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="">
 			<div class="col-xs-8 col-md-8 col-sm-8" >
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="homepage.php">
                     <img class="rounded" src="images/logo.jpg" alt="Logo" style="width:50px;">
                 </a>
 			</div>
@@ -100,7 +100,7 @@
                         
     <div class="form-group">        
     <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default" name="submit"></button>
+        <button type="submit" class="btn btn-default" name="submit">Submit</button>
     </div>
     </div>
     

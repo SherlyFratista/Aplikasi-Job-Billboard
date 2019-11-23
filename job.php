@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Welcome to JobBillboard</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,6 +13,13 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body style="background-color: #FFFACD">
+	<div id="home" style="height: 150px; background-image: url('images/logo.jpg'); background-size: contain; filter: brightness(50%); padding: 50px 0px">
+		<div class="container-fluid">	
+			<marquee>
+				<h1 class="text-white">Hello! Welcome to JobBillboard</h1>
+			</marquee>
+		</div>
+	</div>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="">
 		<div class="col-xs-8 col-md-8 col-sm-8" >
 			<a class="navbar-brand" href="homepage.php">
@@ -21,13 +28,13 @@
 		</div>
 		<div class="col-xs-4 col-md-4 col-sm-4">
 			<ul class="navbar-nav">
-				<li class="nav-item" style="margin-right: 5px"><a class="nav-link" href="homepage.html">HOME</a></li>
+				<li class="nav-item active" style="margin-right: 5px"><a class="nav-link" href="homepage.html">HOME</a></li>
 				<li class="nav-item" style="margin-right: 5px"><a class="nav-link" href="#">NOTIFICATION</a></li>
-				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post.html">POST</a></li>
-				<li class="nav-item active dropdown" style="margin-right: 15px">
+				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post.php">POST</a></li>
+				<li class="nav-item dropdown" style="margin-right: 15px">
 				<a class="btn btn-success dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">HELLO</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="user_profile.php">Profile</a>
+						<a class="dropdown-item" href="#">Profile</a>
 						<a class="dropdown-item" href="#">Logout</a>
 					</div>
 				</li>
@@ -35,25 +42,77 @@
 		</div>
 	</nav>
 
-	<div class="container" style="background-color: white; width: 70%; margin: 60px auto 220px auto; border-radius: 10px; border: 1px solid white">
-		<div class="row" style="margin: 20px 0px">
-			<div class="col-xs-3 col-md-3 col-sm-3">
-				<div width="200" height="200">
-					<img src="https://dummyimage.com/200x200/333333/fff.png" class="img-thumbnail" alt="Profile">
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-6 col-sm-6">
-				<h2>Username</h2><br>
-				<h6>Nama</h6>
-				<h6>Jumlah Post</h6><hr>
-				<h6>About</h6>
-			</div>
-			<div class="col-xs-3 col-md-3 col-sm-3">
-				<div><a class="btn btn-primary" href="edit_profile.php">Edit Profile</a></div><br>
-				<div><a class="btn btn-primary" href="">My Post</a></div>
-			</div>
-		</div>
-	</div>
+
+
+    <div class="content-inner">
+        <!-- Page Header-->
+       <!-- Breadcrumb-->
+       <div class="breadcrumb-holder container-fluid">
+         <br>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item active">Categories</li>
+            <li class="breadcrumb-item active">Projek Web Dashboard Menggunakan Framework Laravel</li>
+          </ul>
+        </div>
+        <section class="tables">   
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="card" style="width:1200px">
+                  
+                  <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Projek Web Dashboard Menggunakan Framework Laravel</h3>
+                  </div>
+                  <div class="card-body">
+                     <center>  <img class="rounded" src="images/project2.png" alt="Logo" style="width:500px;"> </center>
+                     <br>
+                   <p> Perusahaan Enterprise Application Development adalah sebuah perusahan yang bergerak dalam
+                        bidang pengembangan aplikasi. Saat ini, perusahaan Enterprise Application Development sedang
+                        mengalami penurunan profit perusahaan selama 2 tahun terakhir, penurunan profit perusahaan
+                        disebabkan karena kurangnya strategi marketing dalam melakukan promosi, sehingga customer tidak
+                        mengenal lebih dalam tentang perusahaan Enterprise Application Development, maka dari itu
+                        perusahaan Enterprise Application Development ingin membuat sebuah aplikasi sosial media yang
+                        bertujuan untuk memberikan informasi mengenai perusahaan Enterprise Application Development.
+                        Terdapat 4 halaman : <br>
+                        1. Welcome <br>
+                        2. Home <br>
+                        3. Login <br>
+                        4. Register </p>   
+                    
+                    <br>
+                    
+
+                    </div>
+                  </div>
+                </div>
+             
+</div>
+</div>
+        </section>
+<br>
+
+<form action = create.php method="POST">
+        <br>
+   
+                        
+    <div class="form-group" style="width:1470px">
+        <label class="control-label col-sm-2">Comment</label>
+        <div class="col-sm-10">
+        <textarea class="form-control" id="desc" rows="7" placeholder="Enter Comment here" name="description"></textarea>
+        </div>
+    </div>
+                        
+   
+    <div class="form-group">        
+    <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" name="submit">Submit</button>
+    </div>
+    </div>
+    
+        </form>
+
+    <!-- Footer -->
 
 	<footer style="background-color: #f9dc24">
 		<div class="container-fluid text-center text-md-left">

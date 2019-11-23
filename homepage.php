@@ -32,7 +32,7 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
 	</div>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="">
 		<div class="col-xs-8 col-md-8 col-sm-8" >
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="homepage.php">
                 <img class="rounded" src="images/logo.jpg" alt="Logo" style="width:50px;">
             </a>
 		</div>
@@ -44,8 +44,8 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
 				<li class="nav-item dropdown" style="margin-right: 15px">
 				<a class="btn btn-success dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">HELLO</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Profile</a>
-						<a class="dropdown-item" href="#">Logout</a>
+						<a class="dropdown-item" href="user_profile.php">Profile</a>
+						<a class="dropdown-item" href="index.php">Logout</a>
 					</div>
 				</li>
 			</ul>
@@ -118,7 +118,7 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
     foreach($result as $data){
     ?>
         <div class="col-xs-3 col-sm-3 col-md-3">
-	    <a href="loginJOB.php">
+	    <a href="job.php">
 	    <img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
 	    <div class="carousel-caption">
 	    <h6><?= $data["title"] ?></h6>
