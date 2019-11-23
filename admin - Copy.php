@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $conn = mysqli_connect("localhost", "root", "", "jobbillboard");
 $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project1%' ");
 $result2 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project2%' ");
@@ -6,7 +6,7 @@ $a = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten1%' ");
 $b = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten2%' ");
 $c = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Tutor%' ");
 $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%' ");
-?>
+?> -->
 
 <!DOCTYPE html>
 <html>
@@ -36,17 +36,9 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
 
 
   <body>
-      <div id="home" style="height: 150px; background-image: url('images/logo.jpg'); background-size: contain; filter: brightness(50%); padding: 50px 0px">
-        <div class="container-fluid">	
-          <marquee>
-            <h1 class="text-white">Hello! Welcome to JobBillboard</h1>
-          </marquee>
-        </div>
-      </div>
-      
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="">
 
-          <div class="col-xs-4 col-md-4 col-sm-4" style="margin-left: 1080px;">
+          <div class="col-xs-4 col-md-4 col-sm-4">
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
               <!-- Notifications-->

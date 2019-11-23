@@ -1,7 +1,7 @@
-<?php
+<!-- <?php
 $conn = mysqli_connect("localhost", "root", "", "jobbillboard");
 $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' ");
-?>
+?> -->
 
 <!DOCTYPE html>
 <html>
@@ -29,83 +29,78 @@ $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' 
 
   </head>
 
+<body>
+  <nav class="navbar navbar-expand-sm" style="padding: 8px">
+    <div class="col-xs-10 col-md-10 col-sm-10" >
+      <a class="navbar-brand" href="homepage.php">
+                <img src="" alt="Logo">
+            </a>
+    </div>
+    <div class="col-xs-2 col-md-2 col-sm-2">
+      <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
-  <body>
-      <div id="home" style="height: 150px; background-image: url('images/logo.jpg'); background-size: contain; filter: brightness(50%); padding: 50px 0px">
-        <div class="container-fluid">	
-          <marquee>
-            <h1 class="text-white">Hello! Welcome to JobBillboard</h1>
-          </marquee>
-        </div>
-      </div>
-      
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="">
-
-          <div class="col-xs-4 col-md-4 col-sm-4" style="margin-left: 1080px;">
-              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-
-              <!-- Notifications-->
-              <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">12</span></a>
-                <ul aria-labelledby="notifications" class="dropdown-menu">
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification">
-                        <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
-                        <div class="notification-time"><small>4 minutes ago</small></div>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification">
-                        <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
-                        <div class="notification-time"><small>4 minutes ago</small></div>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification">
-                        <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
-                        <div class="notification-time"><small>4 minutes ago</small></div>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification">
-                        <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
-                        <div class="notification-time"><small>10 minutes ago</small></div>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
-                </ul>
-              </li>
-
-
-              <!-- Messages -->
-              <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange badge-corner">10</span></a>
-                <ul aria-labelledby="notifications" class="dropdown-menu">
-                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                      <div class="msg-profile"> <img src="images/profil.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                      <div class="msg-body">
-                        <h3 class="h5">Budi</h3><span>Sent You Message</span>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                      <div class="msg-profile"> <img src="images/profil3.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                      <div class="msg-body">
-                        <h3 class="h5">Abdul</h3><span>Sent You Message</span>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                      <div class="msg-profile"> <img src="images/profil2.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                      <div class="msg-body">
-                        <h3 class="h5">Lathifah</h3><span>Sent You Message</span>
-                      </div></a></li>
-                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
-                </ul>
-              </li>
-             
-              <li class="nav-item" style="margin-right: 15px">&ensp;</li>
-              <li class="nav-item dropdown" style="margin-right: 15px">
-              <a class="btn btn-success dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">SYF</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Logout</a>
-                </div>
-              </li>
+        <!-- Notifications -->
+        <li class="nav-item dropdown">
+          <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">12</span></a>
+            <ul aria-labelledby="notifications" class="dropdown-menu">
+              <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                  <div class="notification">
+                    <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
+                    <div class="notification-time"><small>4 minutes ago</small></div>
+                  </div></a></li>
+              <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                  <div class="notification">
+                    <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                    <div class="notification-time"><small>4 minutes ago</small></div>
+                  </div></a></li>
+              <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                  <div class="notification">
+                    <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
+                    <div class="notification-time"><small>4 minutes ago</small></div>
+                  </div></a></li>
+              <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                  <div class="notification">
+                    <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                    <div class="notification-time"><small>10 minutes ago</small></div>
+                  </div></a></li>
+              <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
             </ul>
+        </li>
+
+        <!-- Messages -->
+        <li class="nav-item dropdown">
+          <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange badge-corner">10</span></a>
+            <ul aria-labelledby="notifications" class="dropdown-menu">
+              <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                  <div class="msg-profile"> <img src="images/profil.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                  <div class="msg-body">
+                    <h3 class="h5">Budi</h3><span>Sent You Message</span>
+                  </div></a></li>
+              <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                  <div class="msg-profile"> <img src="images/profil3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                  <div class="msg-body">
+                    <h3 class="h5">Abdul</h3><span>Sent You Message</span>
+                  </div></a></li>
+              <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                  <div class="msg-profile"> <img src="images/profil2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                  <div class="msg-body">
+                    <h3 class="h5">Lathifah</h3><span>Sent You Message</span>
+                  </div></a></li>
+              <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item"></li>
+        <li class="nav-item dropdown">
+        <a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Hello</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="user_profile.php">Profile</a>
+            <a class="dropdown-item" href="index.php">Logout</a>
           </div>
-        </nav>
-      </header>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 
 
@@ -228,8 +223,9 @@ $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' 
             </div>
           </section>
 
-          <?php
-    while ($select = mysqli_fetch_assoc($result)){ ?>
+          <!-- <?php
+    while ($select = mysqli_fetch_assoc($result)){ ?> -->
+
           <!-- Projects Section-->
           <section class="projects no-padding-top">
             <div class="container-fluid">
@@ -270,7 +266,7 @@ $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' 
     </div>
     </div>
     <?php } ?>
-  <!-- Footer -->
+  <!-- Footer --><!-- 
 
 	<footer style="background-color: #f9dc24">
       <div class="container-fluid text-center text-md-left">
@@ -302,7 +298,7 @@ $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' 
         </div>
       </div>
       <div class="footer-copyright text-center py-3">&copy;JobBillboard. All Rights Reserved</div>
-    </footer>
+    </footer> -->
 
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>

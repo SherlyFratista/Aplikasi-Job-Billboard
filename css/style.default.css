@@ -2178,7 +2178,7 @@ STYLE SWITCHER FOR DEMO
   background-image: none;
 }
 
-.btn-primary {
+/*.btn-primary {
   color: color-yiq(#796AEE);
   background-color: #796AEE;
   border-color: #796AEE;
@@ -2212,7 +2212,7 @@ STYLE SWITCHER FOR DEMO
 .show > .btn-primary.dropdown-toggle:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(121, 106, 238, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(121, 106, 238, 0.5);
-}
+}*/
 
 .btn-secondary {
   color: color-yiq(#868e96);
