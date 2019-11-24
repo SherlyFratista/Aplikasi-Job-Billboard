@@ -24,7 +24,7 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
 	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
-		<div class="col-xs-7 col-md-7 col-sm-7" >
+		<div class="col-xs-7 col-md-7 col-sm-7">
 			<a class="navbar-brand" href="homepage.php">
                 <img src="" alt="Logo">
             </a>

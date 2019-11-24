@@ -25,16 +25,7 @@
 
 
   <body>
-
-      <div id="home" style="height: 150px; background-image: url('images/logo.jpg'); background-size: contain; filter: brightness(50%); padding: 50px 0px">
-        <div class="container-fluid">	
-          <marquee>
-            <h1 class="text-white">Hello! Welcome to JobBillboard</h1>
-          </marquee>
-        </div>
-      </div>
-      
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="">
 
           <div class="col-xs-4 col-md-4 col-sm-4" style="margin-left: 1080px;">
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
@@ -99,7 +90,6 @@
             </ul>
           </div>
         </nav>
-      </header>
 
       <div class="page-content d-flex align-items-stretch"> 
         <!-- Side Navbar -->
@@ -192,41 +182,6 @@
       </div>
   </div>
   </div>
-
-
-  <!-- Footer -->
-
-	<footer style="background-color: #f9dc24">
-      <div class="container-fluid text-center text-md-left">
-        <div class="row bg-dark" style="height: 250px">
-          <div class="col-md-4">
-            <div class="container">
-              <h5 class="my-4 text-white">JobBillboard</h5>
-              <h5 class="text-warning">About Us</h5>
-              <p class="text-white">JobBillboard adalah sebuah website dan aplikasi Job Listing yang memudahkan user dalam mencari lowongan pekerjaan atau projek sekitar Telkom Unversity</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="container py-5 my-4">
-              <h5 class="text-warning">Contact Us</h5>
-              <p class="text-white"><i class="fa fa-phone mr-md-3"></i>+62 22-1234567</p>
-              <p class="text-white"><i class="fa fa-envelope mr-md-3"></i>kelompok15@JobBillboard.com</a></p>
-              <a href="#"><i class="fa fa-facebook fa-2x text-white mr-md-5"></i></a>
-              <a href="#"><i class="fa fa-google-plus fa-2x text-white mr-md-5"></i></a>
-              <a href="#"><i class="fa fa-twitter fa-2x text-white mr-md-5"></i></a>
-              <a href="#"><i class="fa fa-youtube fa-2x text-white mr-md-5"></i></a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="container py-5 my-4">
-              <h5 class="text-warning">Address</h5>
-              <p class="text-white"> <i class="fa fa-map-marker mr-md-3"></i>Jl. Telekomunikasi Jl. Terusan Buah Batu, Sukapura Bandung, Jawa Barat - 40257</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright text-center py-3">&copy;JobBillboard. All Rights Reserved</div>
-    </footer>
 
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
