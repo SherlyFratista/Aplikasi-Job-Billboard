@@ -32,22 +32,27 @@ $result = mysqli_query($conn, "SELECT*FROM todo");
 
 
     <!-- tambahan -->
+   
+        <link href="vendor2/fontawesome-free/css/all.min.css" rel="stylesheet">
+        <link href="vendor2/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="vendor2/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
 
   <body>
 
-      <div id="home" style="height: 150px; background-image: url('images/logo.jpg'); background-size: contain; filter: brightness(50%); padding: 50px 0px">
+      <!-- <div id="home" style="height: 150px; background-image: url('images/logo.jpg'); background-size: contain; filter: brightness(50%); padding: 50px 0px">
         <div class="container-fluid">	
           <marquee>
             <h1 class="text-white">Hello! Welcome to JobBillboard</h1>
           </marquee>
         </div>
       </div>
-      
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="">
+       -->
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="background-color:#66A5AD">
 
-          <div class="col-xs-4 col-md-4 col-sm-4" style="margin-left: 1080px;">
+          <div class="col-xs-4 col-md-4 col-sm-4" style="margin-left: 1080px;background-color:#66A5AD">
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
              <!-- Notifications-->
              <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">12</span></a>
@@ -164,6 +169,44 @@ $result = mysqli_query($conn, "SELECT*FROM todo");
           </div>
         </div>
         <?php }?>
+  <!-- Footer -->
+
+<footer class="text-dark" style="background-color: #c4dfe6">
+		<div class="container-fluid text-center text-md-left">
+			<div class="row bg-light" style="height: 250px">
+				<div class="col-sm-4 col-md-4 col-xs-4">
+					<div class="container">
+						<h5 class="my-4 text-dark">JobBillboard</h5>
+						<h5 class="text-primary">About Us</h5>
+						<p class="text-dark">JobBillboard is a Job Listing website and application that makes it easy for users to search for jobs or projects around Telkom University</p>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-4 col-xs-4">
+					<div class="container py-5 my-4">
+						<h5 class="text-primary">Contact Us</h5>
+						<p class="text-dark"><i class="fa fa-phone mr-md-3"></i>+62 22-1234567</p>
+						<p class="text-dark"><i class="fa fa-envelope mr-md-3"></i>kelompok15@JobBillboard.com</a></p>
+						<a href="#"><i class="fab fa-facebook fa-2x text-dark mr-md-5"></i></a>
+						<a href="#"><i class="fab fa-google-plus fa-2x text-dark mr-md-5"></i></a>
+						<a href="#"><i class="fab fa-twitter fa-2x text-dark mr-md-5"></i></a>
+						<a href="#"><i class="fab fa-youtube fa-2x text-dark mr-md-5"></i></a>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-4 col-xs-4">
+					<div class="container py-5 my-4">
+						<h5 class="text-primary">Address</h5>
+						<p class="text-dark"> <i class="fa fa-map-marker mr-md-3"></i>Jl. Telekomunikasi Jl. Terusan Buah Batu, Sukapura Bandung, Jawa Barat - 40257</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright text-center py-3">&copy;JobBillboard. All Rights Reserved</div>
+	</footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor2/jquery/jquery.min.js"></script>
+  <script src="vendor2/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
