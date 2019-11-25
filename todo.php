@@ -1,7 +1,7 @@
-<!-- <?php
+<?php
 $conn = mysqli_connect("localhost", "root", "", "jobbillboard");
 $result = mysqli_query($conn, "SELECT*FROM todo");
-?> -->
+?>
 
 <!DOCTYPE html>
 <html>
@@ -136,8 +136,8 @@ $result = mysqli_query($conn, "SELECT*FROM todo");
             </div>
           </header>
           <br> <br>
-          <!-- <?php
-        while ($select = mysqli_fetch_assoc($result)){ ?> -->
+          <?php
+        while ($select = mysqli_fetch_assoc($result)){ ?>
           <div class="col-lg-6" style="margin-left: 20px;">
               <div class="checklist card">
                 <div class="card-header d-flex align-items-center">           

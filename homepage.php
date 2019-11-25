@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 $conn = mysqli_connect("localhost", "root", "", "jobbillboard");
 $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project1%' ");
 $result2 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project2%' ");
@@ -6,7 +6,7 @@ $a = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten1%' ");
 $b = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten2%' ");
 $c = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Tutor%' ");
 $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%' ");
-?> -->
+?>
 
 <!DOCTYPE html>
 <html>
@@ -21,13 +21,6 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
     <link rel="title icon" type="image/png" href="images/title-img.png"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="css/fontastic.css">
-    <!-- Google fonts - Poppins -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
 	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
@@ -48,7 +41,7 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
 				<li class="nav-item dropdown">
 				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Hello</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="user_profile.php">Profile</a>
+						<a class="dropdown-item" href="user_dashboard.php">Profile</a>
 						<a class="dropdown-item" href="index.php">Logout</a>
 					</div>
 				</li>
@@ -56,45 +49,8 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
 		</div>
 	</nav>
 
-	<div class="page-content d-flex align-items-stretch"> 
-        <!-- Side Navbar -->
-        <nav class="side-navbar">
-          <!-- Sidebar Header-->
-          <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="images/project8.png" alt="..." class="img-fluid rounded-circle"></div>
-            <div class="title">
-              <h1 class="h4">SYF</h1>
-              <p>Admin JobBillboard</p>
-            </div>
-          </div>
-          <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
-          <ul class="list-unstyled">
-            <li class="active"><a href="admin.php"> <i class="icon-home"></i>Home </a></li>
-            <li><a href="user.php"> <i class="icon-grid"></i>Account Manager</a></li>
-            <li><a href="todo.php"> <i class="icon-padnote"></i>To do List </a></li>
-            <li><a href="posting.php"> <i class="icon-check"></i>Create a Post</a></li>
-            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Post Monitoring </a>
-              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                <li><a href="#">All Post</a></li>
-                <li><a href="#">Deleted Post</a></li>
-                <li><a href="#">Post Request</a></li>
-                <li><a href="#">Draft</a></li>
-              </ul>
-            </li>
-            
-        </nav>
-        <div class="content-inner">
-          <!-- Page Header-->
-          <header class="page-header">
-            <div class="container-fluid">
-              <h2 class="no-margin-bottom">Dashboard</h2>
-            </div>
-          </header>
-         
-    
-
-    <!-- <?php
-    while ($select = mysqli_fetch_assoc($result)){ ?> -->
+    <?php
+    while ($select = mysqli_fetch_assoc($result)){ ?>
 
 	<div class="container-fluid" style="margin-bottom: 60px">
 	<h2 style="margin-top: 60px">Trending</h2>
@@ -287,9 +243,6 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
 </div>
     
     <?php } ?>
-    </div>
-    </div>
-    </div>
     </div>
     </div>
     <!-- Footer -->

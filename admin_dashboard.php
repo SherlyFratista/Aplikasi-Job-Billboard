@@ -1,7 +1,7 @@
-<!-- <?php
+<?php
 $conn = mysqli_connect("localhost", "root", "", "jobbillboard");
 $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' ");
-?> -->
+?>
 
 <!DOCTYPE html>
 <html>
@@ -221,8 +221,8 @@ $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' 
             </div>
           </section>
 
-          <!-- <?php
-    while ($select = mysqli_fetch_assoc($result)){ ?> -->
+          <?php
+    while ($select = mysqli_fetch_assoc($result)){ ?>
 
           <!-- Projects Section-->
           <section class="projects no-padding-top">

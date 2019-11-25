@@ -116,85 +116,22 @@
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
           <ul class="list-unstyled">
             <li><a href="user_dashboard.php"> <i class="icon-home"></i>My Profile</a></li>
-            <li class="active"><a href="edit_profile.php"> <i class="icon-grid"></i>Edit Profile</a></li>
-            <li><a href="user_post.php"> <i class="icon-padnote"></i>My Post</a></li>
+            <li><a href="edit_profile.php"> <i class="icon-grid"></i>Edit Profile</a></li>
+            <li class="active"><a href="user_post.php"> <i class="icon-padnote"></i>My Post</a></li>
         </nav>
 
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h2 class="no-margin-bottom">Edit Profile</h2>
+              <h2 class="no-margin-bottom">My Post</h2>
             </div>
           </header>
           
           <section>
           	<div class="container-fluid">
           		<div class="container" style="padding: 20px 20px; border-radius: 20px; box-shadow: 0px 0px 10px -6px">
-          			<form method="POST" action="" enctype="" style="margin: 40px 20px">
-						<div class="form-group row">
-							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
-								<label class="control-label" for="Username">Username</label>
-							</div>
-							<div class="col-xs-10 col-md-10 col-sm-10" class="col-xs-10 col-md-10 col-sm-10">
-								<input type="text" class="form-control" placeholder="Username"></input>
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
-								<label class="control-label" for="First Name">First Name</label>
-							</div>
-							<div class="col-xs-10 col-md-10 col-sm-10">
-								<input type="text" class="form-control" placeholder="First Name"></input>
-							</div>
-								
-						</div>
-						<div class="form-group row">
-							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
-								<label class="control-label" for="Last Name">Last Name</label>
-							</div>
-							<div class="col-xs-10 col-md-10 col-sm-10">
-								<input type="text" class="form-control" placeholder="Last Name"></input>
-							</div>
-								
-						</div>
-						<div class="form-group row">
-							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
-								<label class="control-label" for="Email">Email</label>
-							</div>
-							<div class="col-xs-10 col-md-10 col-sm-10">
-								<input type="email" class="form-control" placeholder="Email"></input>
-							</div>
-								
-						</div>
-						<div class="form-group row">
-							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
-								<label class="control-label" for="About">About</label>
-							</div>
-							<div class="col-xs-10 col-md-10 col-sm-10">
-								<textarea class="form-control"></textarea>
-							</div>
-								
-						</div>
-						<div class="form-group row">
-							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
-								<label class="control-label" for="Avatar">Avatar</label>
-							</div>
-							<div class="col-xs-10 col-md-10 col-sm-10">
-								<input type="file" class="form-control" placeholder="Avatar"></input>
-							</div>
-								
-						</div>
-						<div class="row">
-							<div class="col">
-								<button type="submit" class="btn btn-success">Save Change</button>
-							</div>	
-							<div class="col">
-								<a href="user_profile.php" class="btn btn-secondary" style="float: right;">Cancel</a>
-							</div>
-						</div>
-					</form>
+          			
           		</div>
           	</div>
           </section>

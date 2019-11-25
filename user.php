@@ -1,9 +1,9 @@
-<!-- <?php
+<?php
 $conn = mysqli_connect("localhost", "root", "", "jobbillboard");
 $a = mysqli_query($conn, "SELECT*FROM user WHERE status LIKE '%admin%' ");
 $b = mysqli_query($conn, "SELECT*FROM user WHERE status LIKE '%student%' ");
 $c = mysqli_query($conn, "SELECT*FROM user WHERE status LIKE '%lecturer%' ");
-?> -->
+?>
 
 <!DOCTYPE html>
 <html>
@@ -139,8 +139,8 @@ $c = mysqli_query($conn, "SELECT*FROM user WHERE status LIKE '%lecturer%' ");
             </div>
           </header>
           <br> <br>
-        <!-- <?php
-        while ($select = mysqli_fetch_assoc($a)){ ?> -->
+        <?php
+        while ($select = mysqli_fetch_assoc($a)){ ?>
          <!-- Breadcrumb-->
          <div class="breadcrumb-holder container-fluid">
            <br>

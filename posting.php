@@ -114,7 +114,6 @@
             <li><a href="admin_dashboard.php"> <i class="icon-home"></i>Home </a></li>
             <li><a href="user.php"> <i class="icon-grid"></i>Account Manager</a></li>
             <li><a href="todo.php"> <i class="icon-padnote"></i>To do List </a></li>
-            <li class="active"><a href="posting.php"> <i class="icon-check"></i>Create a Post</a></li>
             <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Post Monitoring </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="#">All Post</a></li>
@@ -136,13 +135,13 @@
           <section class="dashboard-header container">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3" style="box-shadow: 4px 4px 4px -6px">
+                    <div class="col-md-3" style="box-shadow: 0px 0px 10px -6px">
                         <div class="contact-info">
                             <img src="images/ann.png" alt="image"/>
                             <h3>Let's Post your new Job Vacancies Here!</h3>
                         </div>
                     </div>
-                    <div class="col-md-9" style="box-shadow: 4px 4px 4px -6px">
+                    <div class="col-md-9" style="box-shadow: 0px 0px 10px -6px">
                         <div class="contact-form">
                             <form action = create.php method="POST">
                                 <div class="form-group">

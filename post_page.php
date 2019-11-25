@@ -46,7 +46,7 @@
                 <li class="nav-item dropdown">
                 <a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Hello</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="user_profile.php">Profile</a>
+                        <a class="dropdown-item" href="user_dashboard.php">Profile</a>
                         <a class="dropdown-item" href="index.php">Logout</a>
                     </div>
                 </li>
