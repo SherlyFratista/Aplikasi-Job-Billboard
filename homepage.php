@@ -108,7 +108,7 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
     </div>
     
 	<div id="demo" class="carousel slide" data-ride="carousel">
-	<div class="container carousel-inner no-padding">
+	<div class="container carousel-inner" style="padding: 0px">
 
     <div class="carousel-item active" style="margin: 0px 4px">
     <?php
@@ -167,7 +167,7 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
     </div>
     
 	<div id="demo2" class="carousel slide" data-ride="carousel">
-	<div class="container carousel-inner no-padding">
+	<div class="container carousel-inner" style="padding: 0px">
 
     <div class="carousel-item active" style="margin: 0px 4px">
     <?php
@@ -226,7 +226,7 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
 	</div>
     
     <div id="demo3" class="carousel slide" data-ride="carousel">
-	<div class="container carousel-inner no-padding	">
+	<div class="container carousel-inner	" style="padding: 0px">
     <div class="carousel-item active" style="margin: 0px 4px">
     <?php
     foreach($c as $data){
