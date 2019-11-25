@@ -55,63 +55,61 @@
     </nav>
     
     <div class="container" style="margin: 60px auto">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="contact-info">
-                        <img src="images/ann.png" alt="image"/>
-                        <h3>Let's Post your new Job Vacancies Here!</h3>
-                    </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="contact-info">
+                    <img src="images/ann.png" alt="image"/>
+                    <h3>Let's Post your new Job Vacancies Here!</h3>
                 </div>
-    <div class="col-md-9">
-    <div class="contact-form">
-
-    <div class="form-group">
-    <form action = create.php method="POST">
-        <br>
-        <label class="control-label col-sm-2" >Title</label>
-        <div class="col-sm-10">          
-        <input type="text" class="form-control" id="judul" placeholder="Enter Title Here" name="title">
+            </div>
+            <div class="col-md-9">
+                <div class="contact-form">
+                    <form action = create.php method="POST">
+                        <div class="form-group">
+                            <br>
+                            <label class="control-label col-sm-2" >Title</label>
+                            <div class="col-sm-10">          
+                            <input type="text" class="form-control" id="judul" placeholder="Enter Title Here" name="title">
+                            </div>
+                        </div>
+                                           
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="lname">Deadline</label>
+                            <div class="col-sm-10">          
+                            <input type="date" class="form-control" name="deadline">
+                            </div>
+                        </div>
+                                            
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Description</label>
+                            <div class="col-sm-10">
+                            <textarea class="form-control" id="desc" rows="7" placeholder="Enter Description here" name="description"></textarea>
+                            </div>
+                        </div>
+                                            
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Category</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" id="judul" placeholder="Enter Category Here" name="category">
+                            </div>
+                        </div>
+                                            
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Poster</label>
+                            <div class="col-sm-10">
+                            <input type="file" id="BSbtninfo">
+                            </div>
+                        </div>
+                                            
+                        <div class="form-group">        
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default" name="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-                       
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="lname">Deadline</label>
-        <div class="col-sm-10">          
-        <input type="date" class="form-control" name="deadline">
-        </div>
-    </div>
-                        
-    <div class="form-group">
-        <label class="control-label col-sm-2">Description</label>
-        <div class="col-sm-10">
-        <textarea class="form-control" id="desc" rows="7" placeholder="Enter Description here" name="description"></textarea>
-        </div>
-    </div>
-                        
-    <div class="form-group">
-        <label class="control-label col-sm-2">Category</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" id="judul" placeholder="Enter Category Here" name="category">
-        </div>
-    </div>
-                        
-    <div class="form-group">
-        <label class="control-label col-sm-2">Poster</label>
-        <div class="col-sm-10">
-        <input type="file" id="BSbtninfo">
-        </div>
-    </div>
-                        
-    <div class="form-group">        
-    <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default" name="submit">Submit</button>
-    </div>
-    </div>
-    
-        </form>
-    </div>
-    </div>
-    </div>
     </div>
 
     <!-- Footer -->

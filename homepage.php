@@ -21,12 +21,19 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
     <link rel="title icon" type="image/png" href="images/title-img.png"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
 	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
 		<div class="col-xs-7 col-md-7 col-sm-7">
 			<a class="navbar-brand" href="homepage.php">
-                <img src="" alt="Logo">
+                <img src ="images/JB.png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
             </a>
 		</div>
 		<div class="col-xs-5 col-md-5 col-sm-5">
@@ -48,6 +55,43 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
 			</ul>
 		</div>
 	</nav>
+
+	<div class="page-content d-flex align-items-stretch"> 
+        <!-- Side Navbar -->
+        <nav class="side-navbar">
+          <!-- Sidebar Header-->
+          <div class="sidebar-header d-flex align-items-center">
+            <div class="avatar"><img src="images/project8.png" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="title">
+              <h1 class="h4">SYF</h1>
+              <p>Admin JobBillboard</p>
+            </div>
+          </div>
+          <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+          <ul class="list-unstyled">
+            <li class="active"><a href="admin.php"> <i class="icon-home"></i>Home </a></li>
+            <li><a href="user.php"> <i class="icon-grid"></i>Account Manager</a></li>
+            <li><a href="todo.php"> <i class="icon-padnote"></i>To do List </a></li>
+            <li><a href="posting.php"> <i class="icon-check"></i>Create a Post</a></li>
+            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Post Monitoring </a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                <li><a href="#">All Post</a></li>
+                <li><a href="#">Deleted Post</a></li>
+                <li><a href="#">Post Request</a></li>
+                <li><a href="#">Draft</a></li>
+              </ul>
+            </li>
+            
+        </nav>
+        <div class="content-inner">
+          <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+              <h2 class="no-margin-bottom">Dashboard</h2>
+            </div>
+          </header>
+         
+    
 
     <!-- <?php
     while ($select = mysqli_fetch_assoc($result)){ ?> -->
@@ -243,6 +287,9 @@ $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%
 </div>
     
     <?php } ?>
+    </div>
+    </div>
+    </div>
     </div>
     </div>
     <!-- Footer -->

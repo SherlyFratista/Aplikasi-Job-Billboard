@@ -28,7 +28,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container" >
-      <img src ="images/JB.png" class="navbar-brand" href="#" width ="200px" height="80px">
+      <img src ="images/JB.png" class="navbar-brand" href="index.php" width ="200px" height="80px">
       <a class="navbar-brand-right" style="margin-left: 600px;" href="#" data-toggle="modal" data-target="#modalLogin">Login</a>
       <a class="navbar-brand-right" href="#" data-toggle="modal" data-target="#modalRegist">Register</a>
       <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modalLogin">Post a Job</a>
