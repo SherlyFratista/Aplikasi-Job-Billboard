@@ -1,6 +1,6 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "jobbillboard");
 $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' ");
+include "Connection.php";
 ?>
 
 <!DOCTYPE html>

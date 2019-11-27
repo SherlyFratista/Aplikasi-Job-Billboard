@@ -1,3 +1,8 @@
+<?php
+include "Connection.php";
+?>
+
+
 <!DOCTYPE html>
 <html>
 <!DOCTYPE html>

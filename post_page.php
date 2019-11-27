@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
         <div class="col-xs-7 col-md-7 col-sm-7" >
             <a class="navbar-brand" href="homepage.php">
-                <img src="" alt="Logo">
+                <img src="images/JB.png" alt="Logo" width ="200px" height="80px">
             </a>
         </div>
         <div class="col-xs-5 col-md-5 col-sm-5">

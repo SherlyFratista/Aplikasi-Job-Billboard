@@ -6,6 +6,7 @@ $a = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten1%' ");
 $b = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten2%' ");
 $c = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Tutor%' ");
 $result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%' ");
+require'Connection.php';
 ?>
 
 <!DOCTYPE html>

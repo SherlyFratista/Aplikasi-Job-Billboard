@@ -13,17 +13,17 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body style="background-color: #FFFACD">
-	<div id="home" style="height: 150px; background-image: url('images/logo.jpg'); background-size: contain; filter: brightness(50%); padding: 50px 0px">
+	<!-- <div id="home" style="height: 150px; background-image: url('images/logo.jpg'); background-size: contain; filter: brightness(50%); padding: 50px 0px">
 		<div class="container-fluid">	
 			<marquee>
 				<h1 class="text-white">Hello! Welcome to JobBillboard</h1>
 			</marquee>
 		</div>
-	</div>
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="">
+	</div> -->
+	<nav class="navbar navbar-expand-sm bg-white navbar-white sticky-top" style="">
 		<div class="col-xs-8 col-md-8 col-sm-8" >
 			<a class="navbar-brand" href="homepage.php">
-                <img class="rounded" src="images/logo.jpg" alt="Logo" style="width:50px;">
+                <img class="rounded" src="images/JB.png" alt="Logo" style="width:200px; height:80px;">
             </a>
 		</div>
 		<div class="col-xs-4 col-md-4 col-sm-4">
