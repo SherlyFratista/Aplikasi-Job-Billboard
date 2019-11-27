@@ -5,6 +5,9 @@
      $username = $_POST['username'];
      $password = $_POST['password'];
      $fname = $_POST['fname'];
+     $lname = $_POST['lname'];
+     $email = $_POST['email'];
+     $status = $_POST['status'];
      $sql = "SELECT * FROM user WHERE username = '$username'";
      $query = $db->query($sql);
      if($query->num_rows != 0) {
@@ -12,11 +15,11 @@
      ";
      ?> <META HTTP-EQUIV="refresh" CONTENT="3;URL=Login.php"> <?php
    } else {
-     if(!$username || !$pasword) {
+     if(!$username || !$password) {
        echo "<div align='center'>Masih ada data yang kosong! ";
        ?> <META HTTP-EQUIV="refresh" CONTENT="3;URL=Register.php"> <?php
      } else {
-       $data =  "INSERT INTO user(id,username,password,fname,lname,email,status) VALUES (NULL, '$username', '$password', '$fname','$lname', '$status','$email')";
+       $data =  "INSERT INTO user(id,username,password,fname,lname,email,status) VALUES (NULL, '$username', '$password', '$fname','$lname', '$email','$status')";
        $simpan = $db->query($data);
        if($simpan) {
          echo "<div align='center'>Pendaftaran Sukses</div>";
