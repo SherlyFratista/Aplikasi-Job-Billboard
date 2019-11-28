@@ -1,6 +1,10 @@
 <?php
-$result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' ");
-include "Connection.php";
+  include ('config/connect.php');
+  session_start();
+  $user = $_SESSION['user'];
+  $status = $_SESSION['status'];
+
+  $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' ");
 ?>
 
 <!DOCTYPE html>
@@ -90,10 +94,10 @@ include "Connection.php";
 
         <li class="nav-item"></li>
         <li class="nav-item dropdown">
-        <a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Hello</a>
+        <a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="user_profile.php">Profile</a>
-            <a class="dropdown-item" href="index.php">Logout</a>
+            <a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
+            <a class="dropdown-item" href="controller/logout.php">Logout</a>
           </div>
         </li>
       </ul>
@@ -109,7 +113,7 @@ include "Connection.php";
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="images/project8.png" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
-              <h1 class="h4">SYF</h1>
+              <h1 class="h4"><?= $user?></h1>
               <p>Admin JobBillboard</p>
             </div>
           </div>

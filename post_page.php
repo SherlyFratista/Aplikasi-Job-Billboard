@@ -1,3 +1,11 @@
+<?php
+    include ('config/connect.php');
+    session_start();
+    $user = $_SESSION['user'];
+    $status = $_SESSION['status'];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,10 +52,10 @@
                     </form>
                 </li>
                 <li class="nav-item dropdown">
-                <a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Hello</a>
+                <a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="user_dashboard.php">Profile</a>
-                        <a class="dropdown-item" href="index.php">Logout</a>
+                        <a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
+                        <a class="dropdown-item" href="controller/logout.php">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -64,40 +72,40 @@
             </div>
             <div class="col-md-9">
                 <div class="contact-form">
-                    <form action = create.php method="POST">
+                    <form action = "controller/create.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <br>
                             <label class="control-label col-sm-2" >Title</label>
                             <div class="col-sm-10">          
-                            <input type="text" class="form-control" id="judul" placeholder="Enter Title Here" name="title">
+                            <input type="text" class="form-control" id="judul" placeholder="Enter Title Here" name="title" required>
                             </div>
                         </div>
                                            
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="lname">Deadline</label>
                             <div class="col-sm-10">          
-                            <input type="date" class="form-control" name="deadline">
+                            <input type="date" class="form-control" name="deadline" required>
                             </div>
                         </div>
                                             
                         <div class="form-group">
                             <label class="control-label col-sm-2">Description</label>
                             <div class="col-sm-10">
-                            <textarea class="form-control" id="desc" rows="7" placeholder="Enter Description here" name="description"></textarea>
+                            <textarea class="form-control" id="desc" rows="5" placeholder="Enter Description here" name="description" required></textarea>
                             </div>
                         </div>
                                             
                         <div class="form-group">
                             <label class="control-label col-sm-2">Category</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="judul" placeholder="Enter Category Here" name="category">
+                            <input type="text" class="form-control" id="judul" placeholder="Enter Category Here" name="category" required>
                             </div>
                         </div>
                                             
                         <div class="form-group">
                             <label class="control-label col-sm-2">Poster</label>
                             <div class="col-sm-10">
-                            <input type="file" id="BSbtninfo">
+                            <input type="file" id="BSbtninfo" class="form-control" name="file" required></input>
                             </div>
                         </div>
                                             

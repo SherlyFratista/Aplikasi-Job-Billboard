@@ -1,3 +1,13 @@
+<?php
+	include ('config/connect.php');
+	session_start();
+	$user = $_SESSION['user'];
+	$status = $_SESSION['status'];
+
+	$sql = mysqli_query($conn, "SELECT * FROM post WHERE id = '1'");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,30 +22,27 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body style="background-color: #FFFACD">
-	<!-- <div id="home" style="height: 150px; background-image: url('images/logo.jpg'); background-size: contain; filter: brightness(50%); padding: 50px 0px">
-		<div class="container-fluid">	
-			<marquee>
-				<h1 class="text-white">Hello! Welcome to JobBillboard</h1>
-			</marquee>
-		</div>
-	</div> -->
-	<nav class="navbar navbar-expand-sm bg-white navbar-white sticky-top" style="">
-		<div class="col-xs-8 col-md-8 col-sm-8" >
+<body class="text-dark" style="background-color: #f4f4f4">
+	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
+		<div class="col-xs-7 col-md-7 col-sm-7">
 			<a class="navbar-brand" href="homepage.php">
-                <img class="rounded" src="images/JB.png" alt="Logo" style="width:200px; height:80px;">
+                <img src ="images/JB.png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
             </a>
 		</div>
-		<div class="col-xs-4 col-md-4 col-sm-4">
+		<div class="col-xs-5 col-md-5 col-sm-5">
 			<ul class="navbar-nav">
-				<li class="nav-item active" style="margin-right: 5px"><a class="nav-link" href="homepage.html">HOME</a></li>
-				<li class="nav-item" style="margin-right: 5px"><a class="nav-link" href="#">NOTIFICATION</a></li>
-				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post.php">POST</a></li>
-				<li class="nav-item dropdown" style="margin-right: 15px">
-				<a class="btn btn-success dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">HELLO</a>
+				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post_page.php">Write a post</a></li>
+				<li class="nav-item" style="margin-right: 15px">
+					<form class="form-inline my-2 my-lg-0">
+      					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      					<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+      				</form>
+      			</li>
+				<li class="nav-item dropdown">
+				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Profile</a>
-						<a class="dropdown-item" href="#">Logout</a>
+						<a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
+						<a class="dropdown-item" href="controller/logout.php">Logout</a>
 					</div>
 				</li>
 			</ul>
@@ -55,90 +62,77 @@
             <li class="breadcrumb-item active">Projek Web Dashboard Menggunakan Framework Laravel</li>
           </ul>
         </div>
-        <section class="tables">   
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="card" style="width:1200px">
-                  
-                  <div class="card-header d-flex align-items-center">
-                    <h3 class="h4">Projek Web Dashboard Menggunakan Framework Laravel</h3>
-                  </div>
-                  <div class="card-body">
-                     <center>  <img class="rounded" src="images/project2.png" alt="Logo" style="width:500px;"> </center>
-                     <br>
-                   <p> Perusahaan Enterprise Application Development adalah sebuah perusahan yang bergerak dalam
-                        bidang pengembangan aplikasi. Saat ini, perusahaan Enterprise Application Development sedang
-                        mengalami penurunan profit perusahaan selama 2 tahun terakhir, penurunan profit perusahaan
-                        disebabkan karena kurangnya strategi marketing dalam melakukan promosi, sehingga customer tidak
-                        mengenal lebih dalam tentang perusahaan Enterprise Application Development, maka dari itu
-                        perusahaan Enterprise Application Development ingin membuat sebuah aplikasi sosial media yang
-                        bertujuan untuk memberikan informasi mengenai perusahaan Enterprise Application Development.
-                        Terdapat 4 halaman : <br>
-                        1. Welcome <br>
-                        2. Home <br>
-                        3. Login <br>
-                        4. Register </p>   
-                    
-                    <br>
-                    
 
-                    </div>
-                  </div>
-                </div>
-             
-</div>
-</div>
+        <?php while ($value = mysqli_fetch_row($sql)) {?>
+        <section>
+        	<div class="container">
+        		<div class="card text-center">
+				  <div class="card-header">
+				    <?= $value[5]?>
+				  </div>
+				  <div class="card-body">
+				    <h5 class="card-title"><?= $value[1]?></h5>
+				    <img src="<?= $value[4]?>" width="300" height="300">
+				    <p class="card-text"><?= $value[3]?></p>
+				  </div>
+				  <div class="card-footer text-muted">
+				    <?= $value[2]?>
+				  </div>
+				</div>
+        	</div>
         </section>
-<br>
+        <?php } ?>
 
-<form action = create.php method="POST">
-        <br>
-   
-                        
-    <div class="form-group" style="width:1470px">
-        <label class="control-label col-sm-2">Comment</label>
-        <div class="col-sm-10">
-        <textarea class="form-control" id="desc" rows="7" placeholder="Enter Comment here" name="description"></textarea>
-        </div>
-    </div>
-                        
-   
-    <div class="form-group">        
-    <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default" name="submit">Submit</button>
-    </div>
-    </div>
-    
-        </form>
+        <hr>
+
+        <section>
+        	<div class="container" style="padding: 0">
+				<form method="POST" action="">
+				    <div class="form-group">
+				        <label class="control-label col-sm-2">Comment</label>
+				        <div class="col-sm-10">
+				        <textarea class="form-control" id="desc" rows="5" placeholder="Enter Comment here" name="comment"></textarea>
+				        </div>
+				    </div>
+				                        
+				   
+				    <div class="form-group">        
+				    <div class="col-sm-offset-2 col-sm-10">
+				        <button type="submit" class="btn btn-default" name="submit">Submit</button>
+				    </div>
+				    </div>
+				</form>
+        	</div>
+        </section>
 
     <!-- Footer -->
 
-	<footer style="background-color: #f9dc24">
+	<hr style=" margin-top: 100px">
+	<footer class="text-dark" style="background-color: #c4dfe6;">
 		<div class="container-fluid text-center text-md-left">
-			<div class="row bg-dark" style="height: 250px">
-				<div class="col-md-4">
+			<div class="row bg-light" style="height: 250px">
+				<div class="col-sm-4 col-md-4 col-xs-4">
 					<div class="container">
-						<h5 class="my-4 text-white">JobBillboard</h5>
-						<h5 class="text-warning">About Us</h5>
-						<p class="text-white">JobBillboard adalah sebuah website dan aplikasi Job Listing yang memudahkan user dalam mencari lowongan pekerjaan atau projek sekitar Telkom Unversity</p>
+						<h5 class="my-4 text-dark">JobBillboard</h5>
+						<h5 class="text-primary">About Us</h5>
+						<p class="text-dark">JobBillboard is a Job Listing website and application that makes it easy for users to search for jobs or projects around Telkom University</p>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-sm-4 col-md-4 col-xs-4">
 					<div class="container py-5 my-4">
-						<h5 class="text-warning">Contact Us</h5>
-						<p class="text-white"><i class="fa fa-phone mr-md-3"></i>+62 22-1234567</p>
-						<p class="text-white"><i class="fa fa-envelope mr-md-3"></i>kelompok15@JobBillboard.com</a></p>
-						<a href="#"><i class="fab fa-facebook fa-2x text-white mr-md-5"></i></a>
-						<a href="#"><i class="fab fa-google-plus fa-2x text-white mr-md-5"></i></a>
-						<a href="#"><i class="fab fa-twitter fa-2x text-white mr-md-5"></i></a>
-						<a href="#"><i class="fab fa-youtube fa-2x text-white mr-md-5"></i></a>
+						<h5 class="text-primary">Contact Us</h5>
+						<p class="text-dark"><i class="fa fa-phone mr-md-3"></i>+62 22-1234567</p>
+						<p class="text-dark"><i class="fa fa-envelope mr-md-3"></i>kelompok15@JobBillboard.com</a></p>
+						<a href="#"><i class="fab fa-facebook fa-2x text-dark mr-md-5"></i></a>
+						<a href="#"><i class="fab fa-google-plus fa-2x text-dark mr-md-5"></i></a>
+						<a href="#"><i class="fab fa-twitter fa-2x text-dark mr-md-5"></i></a>
+						<a href="#"><i class="fab fa-youtube fa-2x text-dark mr-md-5"></i></a>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-sm-4 col-md-4 col-xs-4">
 					<div class="container py-5 my-4">
-						<h5 class="text-warning">Address</h5>
-						<p class="text-white"> <i class="fa fa-map-marker mr-md-3"></i>Jl. Telekomunikasi Jl. Terusan Buah Batu, Sukapura Bandung, Jawa Barat - 40257</p>
+						<h5 class="text-primary">Address</h5>
+						<p class="text-dark"> <i class="fa fa-map-marker mr-md-3"></i>Jl. Telekomunikasi Jl. Terusan Buah Batu, Sukapura Bandung, Jawa Barat - 40257</p>
 					</div>
 				</div>
 			</div>

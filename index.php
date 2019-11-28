@@ -45,12 +45,12 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="Login.php">
+          <form method="POST" action="controller/login.php">
             <div class="form-group">
-              <input class="form-control" type="text" name="username" placeholder="username" required></input>
+              <input class="form-control" type="text" name="user" placeholder="Username" required></input>
             </div>
             <div class="form-group">
-              <input class="form-control" type="password" name="password" placeholder="password" required></input>
+              <input class="form-control" type="password" name="pass" placeholder="Password" required></input>
             </div>
         </div>
         <div class="modal-footer">
@@ -73,30 +73,30 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="Register.php">
+          <form method="POST" action="controller/register.php">
             <div class="form-group row">
               <div class="col">
-                <input class="form-control" type="text" name="fname" placeholder="fname" required></input>
+                <input class="form-control" type="text" name="fname" placeholder="Firstname" required></input>
               </div>
               <div class="col">
-                <input class="form-control" type="text" name="lname" placeholder="lname" required></input>
+                <input class="form-control" type="text" name="lname" placeholder="Lastname" required></input>
               </div>
             </div>
             <div class="form-group">
-              <input class="form-control" type="email" name="email" placeholder="email" required></input>
+              <input class="form-control" type="email" name="email" placeholder="Email" required></input>
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" name="username" placeholder="username" required></input>
+              <input class="form-control" type="text" name="user" placeholder="Username" required></input>
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" name="password" placeholder="password" required></input>
+              <input class="form-control" type="text" name="pass" placeholder="Password" required></input>
             </div>
             <div class="row">
               <div class="form-group col-md-6" align="right">
-                <input class="form-radio-input" type="radio" name="level" value="student">Student</input>
+                <input class="form-radio-input" type="radio" name="status" value="student">Student</input>
               </div>
               <div class="form-group col-md-6">
-                <input class="form-radio-input" type="radio" name="level" value="lecturer">Lecturer</input>
+                <input class="form-radio-input" type="radio" name="status" value="lecturer">Lecturer</input>
               </div>
             </div>
         </div>

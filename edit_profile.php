@@ -1,5 +1,12 @@
-<!DOCTYPE html>
-<html>
+<?php
+  include ('config/connect.php');
+  session_start();
+  $user = $_SESSION['user'];
+  $status = $_SESSION['status'];
+
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -90,10 +97,10 @@
 
         <li class="nav-item"></li>
         <li class="nav-item dropdown">
-        <a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Hello</a>
+        <a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="user_profile.php">Profile</a>
-            <a class="dropdown-item" href="index.php">Logout</a>
+            <a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
+            <a class="dropdown-item" href="controller/logout.php">Logout</a>
           </div>
         </li>
       </ul>

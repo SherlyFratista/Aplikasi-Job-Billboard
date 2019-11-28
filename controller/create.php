@@ -1,24 +1,32 @@
 <?php
-$host="localhost";
-$user="root";
-$password="";
-$database="jobbillboard";
+    include('../config/connect.php');
+    session_start();
 
-$conn=mysqli_connect($host,$user,$password,$database) or die("Failed connect to database");
+    if (isset($_POST['submit'])) {
+        $name = $_FILES['file']['name'];
+        $title = $_POST['title'];
+        $dedlen = $_POST['deadline'];
+        $desc = $_POST['description'];
+        $category = $_POST['category'];
 
-if (isset($_POST['submit'])) {
-	$title = $_POST['title'];
-    $dedlen = $_POST['deadline'];
-    $desc = $_POST['description'];
-    $category = $_POST['category'];
+        $target_dir = "../images/";
+        $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
-	$query = "INSERT into post (title, deadline, description, category) values ('$title', '$dedlen', '$desc', '$category') ";
-        $insert = mysqli_query($conn, $query);
-        if($insert){
-            echo "<script>alert('Posting Success !');window.location.href='Homepage.php'</script>";
-         }else {
-            echo "<script>alert('Posting Failed !');window.location.href='Homepage.php'</script>";
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $ext = array("jpg","jpeg","png","gif");
+
+        if (in_array($imageFileType,$ext)) {
+            # code...
+            $sql = mysqli_query($conn, "INSERT INTO post VALUES ('','{$title}', '{$dedlen}', '{$desc}', '{$name}', '{$category}') ");
+            move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
+
+            if($sql){
+                echo "<script>alert('Posting Success !');window.location.href='../post_page.php'</script>";
+             }else{
+                echo "<script>alert('Posting Failed !');window.location.href='../post_page.php'</script>";
+                echo mysqli_error();
+            }
         }
-}
+    }
 
 ?>

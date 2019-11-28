@@ -1,12 +1,15 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "jobbillboard");
-$result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project1%' ");
-$result2 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project2%' ");
-$a = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten1%' ");
-$b = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten2%' ");
-$c = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Tutor%' ");
-$result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%' ");
-require'Connection.php';
+	include ('config/connect.php');
+	session_start();
+	$user = $_SESSION['user'];
+	$status = $_SESSION['status'];
+
+	$result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project1%' ");
+	$result2 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project2%' ");
+	$a = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten1%' ");
+	$b = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten2%' ");
+	$c = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Tutor%' ");
+	$result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%' ");
 ?>
 
 <!DOCTYPE html>
@@ -40,10 +43,10 @@ require'Connection.php';
       				</form>
       			</li>
 				<li class="nav-item dropdown">
-				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">Hello</a>
+				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="user_dashboard.php">Profile</a>
-						<a class="dropdown-item" href="index.php">Logout</a>
+						<a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
+						<a class="dropdown-item" href="controller/logout.php">Logout</a>
 					</div>
 				</li>
 			</ul>
@@ -52,7 +55,6 @@ require'Connection.php';
 
     <?php
     while ($select = mysqli_fetch_assoc($result)){ ?>
-
 	<div class="container-fluid" style="margin-bottom: 60px">
 	<h2 style="margin-top: 60px">Trending</h2>
 		<div id="myShow" class="carousel slide" data-ride="carousel">
@@ -116,7 +118,7 @@ require'Connection.php';
     foreach($result as $data){
     ?>
         <div class="col-xs-3 col-sm-3 col-md-3">
-	    <a href="job.php">
+	    <a href="post_detail.php">
 	    <img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
 	    <div class="carousel-caption">
 	    <h6><?= $data["title"] ?></h6>
@@ -131,7 +133,7 @@ require'Connection.php';
     foreach($result2 as $data){
     ?>
 		<div class="col-xs-3 col-sm-3 col-md-3">
-		<a href="loginJOB.php">
+		<a href="post_detail.php">
 		<img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
 		<div class="carousel-caption">
 		<h6><?= $data["title"] ?></h6>
@@ -175,7 +177,7 @@ require'Connection.php';
     foreach($a as $data){
     ?>
         <div class="col-xs-3 col-sm-3 col-md-3">
-	    <a href="loginJOB.php">
+	    <a href="post_detail.php">
 	    <img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
 	    <div class="carousel-caption">
 	    <h6><?= $data["title"] ?></h6>
@@ -190,7 +192,7 @@ require'Connection.php';
     foreach($b as $data){
     ?>
 		<div class="col-xs-3 col-sm-3 col-md-3">
-		<a href="loginJOB.php">
+		<a href="post_detail.php">
 		<img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
 		<div class="carousel-caption">
 		<h6><?= $data["title"] ?></h6>
@@ -233,7 +235,7 @@ require'Connection.php';
     foreach($c as $data){
     ?>
         <div class="col-xs-3 col-sm-3 col-md-3">
-	    <a href="loginJOB.php">
+	    <a href="post_detail.php">
 	    <img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
 	    <div class="carousel-caption">
 	    <h6><?= $data["title"] ?></h6>
