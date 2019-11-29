@@ -1,6 +1,14 @@
 <?php
   include ('config/connect.php');
   session_start();
+  if (!isset($_SESSION['user'])) {
+		# code...
+		echo '
+                <script type="text/javascript">
+                    alert("Info!, You must login first!");
+                    window.location.assign("index.php");
+                </script>';
+	}
   $user = $_SESSION['user'];
   $status = $_SESSION['status'];
 
@@ -36,10 +44,10 @@
 
   <body>
       <nav class="navbar navbar-expand-sm" style="padding: 8px">
-    <div class="col-xs-10 col-md-10 col-sm-10" >
+    <div class="col-xs-9 col-md-9 col-sm-9" >
       <a class="navbar-brand" href="homepage.php">< Back to Homepage</a>
     </div>
-    <div class="col-xs-2 col-md-2 col-sm-2">
+    <div class="col-xs-3 col-md-3 col-sm-3">
       <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
 
         <!-- Notifications -->

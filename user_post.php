@@ -1,6 +1,14 @@
 <?php
   include ('config/connect.php');
   session_start();
+  if (!isset($_SESSION['user'])) {
+		# code...
+		echo '
+                <script type="text/javascript">
+                    alert("Info!, You must login first!");
+                    window.location.assign("index.php");
+                </script>';
+	}
   $user = $_SESSION['user'];
   $status = $_SESSION['status'];
 

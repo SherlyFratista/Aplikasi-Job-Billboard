@@ -1,6 +1,14 @@
 <?php
 	include ('config/connect.php');
 	session_start();
+	if (!isset($_SESSION['user'])) {
+		# code...
+		echo '
+				<script type="text/javascript">
+						alert("Info!, You must login first!");
+                    window.location.assign("index.php");
+                </script>';
+	}
 	$user = $_SESSION['user'];
 	$status = $_SESSION['status'];
 
@@ -28,12 +36,12 @@
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
 	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
-		<div class="col-xs-7 col-md-7 col-sm-7">
+		<div class="col-xs-6 col-md-6 col-sm-6">
 			<a class="navbar-brand" href="homepage.php">
                 <img src ="images/JB.png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
             </a>
 		</div>
-		<div class="col-xs-5 col-md-5 col-sm-5">
+		<div class="col-xs-6 col-md-6 col-sm-6">
 			<ul class="navbar-nav">
 				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post_page.php">Write a post</a></li>
 				<li class="nav-item" style="margin-right: 15px">
@@ -64,21 +72,11 @@
 			</ul>
 
 			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="images/showcase1.jpg" class="img-fluid">
-					<div class="carousel-caption">
-	   					<h3>Internship Divisi Digital Service</h3>
-	    				<p>Program Internship PT. Telekomunikasi Indonesia Tbk Divisi Digital Service (TELKOM DDS) 
-							memberikan kesempatan bagi mahasiswa/i untuk melakukan penelitian atau mendukung program kerja di 
-							lingkungan bisnis Telkom DDS...</p>
-	  				</div>
-				</div>
-
                 <?php
                  foreach($result4 as $data){
                 ?>
-				<div class="carousel-item">
-					<img src="<?= $data["poster"] ?>" class="img-fluid">
+				<div class="carousel-item active">
+					<img src="images/<?= $data["poster"] ?>" class="img-fluid">
 					<div class="carousel-caption">
 	   					<h3><?= $data["title"] ?></h3>
 	    				<p><?= $data["description"] ?></p>
@@ -119,7 +117,7 @@
     ?>
         <div class="col-xs-3 col-sm-3 col-md-3">
 	    <a href="post_detail.php">
-	    <img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
+	    <img src="images/<?= $data["poster"] ?>" class="rounded img-fluid"> 
 	    <div class="carousel-caption">
 	    <h6><?= $data["title"] ?></h6>
 	    </div>
@@ -134,7 +132,7 @@
     ?>
 		<div class="col-xs-3 col-sm-3 col-md-3">
 		<a href="post_detail.php">
-		<img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
+		<img src="images/<?= $data["poster"] ?>" class="rounded img-fluid"> 
 		<div class="carousel-caption">
 		<h6><?= $data["title"] ?></h6>
 		</div>
@@ -178,7 +176,7 @@
     ?>
         <div class="col-xs-3 col-sm-3 col-md-3">
 	    <a href="post_detail.php">
-	    <img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
+	    <img src="images/<?= $data["poster"] ?>" class="rounded img-fluid"> 
 	    <div class="carousel-caption">
 	    <h6><?= $data["title"] ?></h6>
 	    </div>
@@ -193,7 +191,7 @@
     ?>
 		<div class="col-xs-3 col-sm-3 col-md-3">
 		<a href="post_detail.php">
-		<img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
+		<img src="images/<?= $data["poster"] ?>" class="rounded img-fluid"> 
 		<div class="carousel-caption">
 		<h6><?= $data["title"] ?></h6>
 		</div>
@@ -236,7 +234,7 @@
     ?>
         <div class="col-xs-3 col-sm-3 col-md-3">
 	    <a href="post_detail.php">
-	    <img src="<?= $data["poster"] ?>" class="rounded img-fluid"> 
+	    <img src="images/<?= $data["poster"] ?>" class="rounded img-fluid"> 
 	    <div class="carousel-caption">
 	    <h6><?= $data["title"] ?></h6>
 	    </div>

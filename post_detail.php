@@ -1,6 +1,14 @@
 <?php
 	include ('config/connect.php');
 	session_start();
+	if (!isset($_SESSION['user'])) {
+		# code...
+		echo '
+				<script type="text/javascript">
+					alert("Info!, You must login first!");
+                    window.location.assign("index.php");
+                </script>';
+	}
 	$user = $_SESSION['user'];
 	$status = $_SESSION['status'];
 
@@ -24,12 +32,12 @@
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
 	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
-		<div class="col-xs-7 col-md-7 col-sm-7">
+		<div class="col-xs-6 col-md-6 col-sm-6">
 			<a class="navbar-brand" href="homepage.php">
                 <img src ="images/JB.png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
             </a>
 		</div>
-		<div class="col-xs-5 col-md-5 col-sm-5">
+		<div class="col-xs-6 col-md-6 col-sm-6">
 			<ul class="navbar-nav">
 				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post_page.php">Write a post</a></li>
 				<li class="nav-item" style="margin-right: 15px">
@@ -57,7 +65,7 @@
        <div class="breadcrumb-holder container-fluid">
          <br>
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="homepage.php">Home</a></li>
             <li class="breadcrumb-item active">Categories</li>
             <li class="breadcrumb-item active">Projek Web Dashboard Menggunakan Framework Laravel</li>
           </ul>
@@ -72,7 +80,7 @@
 				  </div>
 				  <div class="card-body">
 				    <h5 class="card-title"><?= $value[1]?></h5>
-				    <img src="<?= $value[4]?>" width="300" height="300">
+				    <img src="images/<?= $value[4]?>" width="300" height="300">
 				    <p class="card-text"><?= $value[3]?></p>
 				  </div>
 				  <div class="card-footer text-muted">
