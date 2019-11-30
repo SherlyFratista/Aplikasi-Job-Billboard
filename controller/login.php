@@ -35,11 +35,21 @@
             }
             $_SESSION['user'] = $user;
             $_SESSION['pass'] = $pass;
-            echo '
+
+            if ($status ==  "admin") {
+                # code...
+                echo '
+                    <script type="text/javascript">
+                        alert("Login success!, You are logged in!");
+                        window.location.assign("../admin_dashboard.php");
+                    </script>';
+            }else{
+                echo '
                 <script type="text/javascript">
                     alert("Login success!, You are logged in!")
                     window.location.assign("../homepage.php");
                 </script>';
+            }
         }else{
             echo '
                 <script type="text/javascript">

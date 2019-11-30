@@ -74,14 +74,6 @@
         </div>
         <div class="modal-body">
           <form method="POST" action="controller/register.php">
-            <div class="form-group row">
-              <div class="col">
-                <input class="form-control" type="text" name="fname" placeholder="Firstname" required></input>
-              </div>
-              <div class="col">
-                <input class="form-control" type="text" name="lname" placeholder="Lastname" required></input>
-              </div>
-            </div>
             <div class="form-group">
               <input class="form-control" type="email" name="email" placeholder="Email" required></input>
             </div>

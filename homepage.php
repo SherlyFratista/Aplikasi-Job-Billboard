@@ -45,9 +45,9 @@
 			<ul class="navbar-nav">
 				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post_page.php">Write a post</a></li>
 				<li class="nav-item" style="margin-right: 15px">
-					<form class="form-inline my-2 my-lg-0">
-      					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      					<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+					<form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
+      					<input class="form-control mr-sm-2" type="text" name="name" required="" placeholder="Search" aria-label="Search">
+						<input class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="submit" value="Search	">
       				</form>
       			</li>
 				<li class="nav-item dropdown">

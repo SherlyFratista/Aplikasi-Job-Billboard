@@ -45,75 +45,24 @@
 
 
   <body>
-      <nav class="navbar navbar-expand-sm" style="padding: 8px">
-    <div class="col-xs-9 col-md-9 col-sm-9" >
-      <a class="navbar-brand" href="homepage.php">< Back to Homepage</a>
-    </div>
-    <div class="col-xs-3 col-md-3 col-sm-3">
-      <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-
-        <!-- Notifications -->
-        <li class="nav-item dropdown">
-          <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">12</span></a>
-            <ul aria-labelledby="notifications" class="dropdown-menu">
-              <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                  <div class="notification">
-                    <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
-                    <div class="notification-time"><small>4 minutes ago</small></div>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                  <div class="notification">
-                    <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
-                    <div class="notification-time"><small>4 minutes ago</small></div>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                  <div class="notification">
-                    <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
-                    <div class="notification-time"><small>4 minutes ago</small></div>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                  <div class="notification">
-                    <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
-                    <div class="notification-time"><small>10 minutes ago</small></div>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
-            </ul>
-        </li>
-
-        <!-- Messages -->
-        <li class="nav-item dropdown">
-          <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange badge-corner">10</span></a>
-            <ul aria-labelledby="notifications" class="dropdown-menu">
-              <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                  <div class="msg-profile"> <img src="images/profil.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                  <div class="msg-body">
-                    <h3 class="h5">Budi</h3><span>Sent You Message</span>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                  <div class="msg-profile"> <img src="images/profil3.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                  <div class="msg-body">
-                    <h3 class="h5">Abdul</h3><span>Sent You Message</span>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                  <div class="msg-profile"> <img src="images/profil2.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                  <div class="msg-body">
-                    <h3 class="h5">Lathifah</h3><span>Sent You Message</span>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
-            </ul>
-        </li>
-
-        <li class="nav-item"></li>
-        <li class="nav-item dropdown">
-        <a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
-            <a class="dropdown-item" href="controller/logout.php">Logout</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
+		<div class="col-xs-10 col-md-10 col-sm-10">
+			<a class="navbar-brand">
+                <img src ="images/JB.png" class="navbar-brand" width ="200px" height="80px">
+            </a>
+		</div>
+		<div class="col-xs-2 col-md-2 col-sm-2">
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown">
+				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown" style="background-color : #007BFF"><?= $user?></a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
+						<a class="dropdown-item" href="controller/logout.php">Logout</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
       <div class="page-content d-flex align-items-stretch"> 
         <!-- Side Navbar -->
@@ -180,8 +129,6 @@
                         <table class="table">
                             <tr>
                               <th>ID</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
                               <th>Username</th>
                               <th>Email</th>
                             </tr>
@@ -190,8 +137,6 @@
                             ?>
                             <tr>
                               <th scope="row"><?= $data["id"] ?></th>
-                              <td><?= $data["fname"] ?></td>
-                              <td><?= $data["lname"] ?></td>
                               <td><?= $data["username"] ?></td>
                               <td><?= $data["email"] ?></td>
                             </tr>
@@ -224,8 +169,6 @@
                             <table class="table">
                             <tr>
                               <th>ID</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
                               <th>Username</th>
                               <th>Email</th>
                             </tr>
@@ -234,8 +177,6 @@
                             ?>
                             <tr>
                               <th scope="row"><?= $data["id"] ?></th>
-                              <td><?= $data["fname"] ?></td>
-                              <td><?= $data["lname"] ?></td>
                               <td><?= $data["username"] ?></td>
                               <td><?= $data["email"] ?></td>
                             </tr>
@@ -268,8 +209,6 @@
                                   <table class="table">
                             <tr>
                               <th>ID</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
                               <th>Username</th>
                               <th>Email</th>
                             </tr>
@@ -278,8 +217,6 @@
                             ?>
                             <tr>
                               <th scope="row"><?= $data["id"] ?></th>
-                              <td><?= $data["fname"] ?></td>
-                              <td><?= $data["lname"] ?></td>
                               <td><?= $data["username"] ?></td>
                               <td><?= $data["email"] ?></td>
                             </tr>
