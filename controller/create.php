@@ -8,7 +8,6 @@
         $dedlen = $_POST['deadline'];
         $desc = $_POST['description'];
         $category = $_POST['category'];
-
         $target_dir = "../images/";
         $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
@@ -21,9 +20,9 @@
             move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
 
             if($sql){
-                echo "<script>alert('Posting Success !');window.location.href='../post_page.php'</script>";
+                echo "<script>window.location.href='../post_page.php'</script>";
              }else{
-                echo "<script>alert('Posting Failed !');window.location.href='../post_page.php'</script>";
+                echo "<script>window.location.href='../post_page.php'</script>";
                 echo mysqli_error();
             }
         }

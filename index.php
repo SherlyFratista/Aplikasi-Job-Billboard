@@ -18,6 +18,8 @@
   <link href="vendor2/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   <!-- Custom styles for this template -->
   <link href="css/landing-page.min.css" rel="stylesheet">
 
@@ -26,15 +28,26 @@
 <body class="bg-light text-dark">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
-    <div class="container" >
-      <img src ="images/JB.png" class="navbar-brand" href="index.php" width ="200px" height="80px">
-      <a class="navbar-brand-right" style="margin-left: 600px;" href="#" data-toggle="modal" data-target="#modalLogin">Login</a>
-      <a class="navbar-brand-right" href="#" data-toggle="modal" data-target="#modalRegist">Register</a>
-      <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modalLogin">Post a Job</a>
+  <nav class="navbar navbar-expand-xs navbar-expand-sm navbar-expand-md bg-light static-top">
+    <div class="col-9">
+      <a class="navbar-brand" href="homepage.php" style="padding: 0">
+                <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
+            </a>
+    </div>
+    <div class="col-3">
+      <ul class="navbar-nav">
+        <li class="nav-item" style="margin-right: 15px">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#modalLogin">Login</a>
+        </li>
+        <li class="nav-item" style="margin-right: 15px">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#modalRegist">Register</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="btn btn-primary" href="" data-toggle="modal" data-target="#modalLogin">Post a Job</a>
+        </li>
+      </ul>
     </div>
   </nav>
-
 
   <!-- Modal Login -->
   <div class="modal fade" id="modalLogin">
@@ -106,18 +119,16 @@
 
   <!-- Masthead -->
   <header class="masthead text-black text-center" style="background-image: url('images/header.jpg'); filter: brightness(98%);">
-        <div class="carousel-title">
-        <h1><span class="total-count">100++ Jobs di Telkom University</span></h1>
-        <h5>
+    <div class="carousel-title">
+      <h1><span class="total-count">100++ Jobs di Telkom University</span></h1>
+      <h5>
         <span class="quality-job">Job Berkualitas</span><span class="bullet">&emsp;•&emsp;</span>
         <span class="quality-emp">Terpercaya</span><span class="bullet">&emsp;•&emsp;</span>
         <span class="quality-trust">Menambah TAK :)</span>
-        </h5>
-        <br>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signup-panel">GET STARTED</button>
-        </div>
-        </div>
-      
+      </h5>
+      <br>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signup-panel">GET STARTED</button>
+    </div>
   </header>
 
   <!-- Icons Grid -->
@@ -155,11 +166,10 @@
     </div>
   </section>
 
-<hr>
+  <hr>
 
-<!-- Footer -->
-
-<footer class="text-dark" style="background-color: #c4dfe6">
+  <!-- Footer -->
+  <footer class="text-dark" style="background-color: #c4dfe6">
 		<div class="container-fluid text-center text-md-left">
 			<div class="row bg-light" style="height: 250px">
 				<div class="col-sm-4 col-md-4 col-xs-4">
@@ -196,5 +206,4 @@
   <script src="vendor2/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>

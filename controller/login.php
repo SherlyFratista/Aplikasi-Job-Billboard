@@ -6,7 +6,6 @@
         # code...
         echo '
             <script type="text/javascript">
-                alert("Info!, You are already logged in!")
                 window.location.assign("../homepage.php");
             </script>';
 
@@ -40,20 +39,17 @@
                 # code...
                 echo '
                     <script type="text/javascript">
-                        alert("Login success!, You are logged in!");
                         window.location.assign("../admin_dashboard.php");
                     </script>';
             }else{
                 echo '
                 <script type="text/javascript">
-                    alert("Login success!, You are logged in!")
                     window.location.assign("../homepage.php");
                 </script>';
             }
         }else{
             echo '
                 <script type="text/javascript">
-                    alert("Login failed!, Email or password wrong!")
                     window.location.assign("../index.php");
                 </script>';
         }

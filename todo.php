@@ -42,14 +42,14 @@
   </head>
 
 
-  <body>
-  <nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
-		<div class="col-xs-10 col-md-10 col-sm-10">
-			<a class="navbar-brand">
-                <img src ="images/JB.png" class="navbar-brand" width ="200px" height="80px">
+  <body class="bg-light">
+  <nav class="navbar navbar-expand-sm bg-light sticky-top" style="padding: 8px">
+    <div class="col-9">
+      <a class="navbar-brand" href="homepage.php" style="padding: 0">
+                <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
             </a>
-		</div>
-		<div class="col-xs-2 col-md-2 col-sm-2">
+    </div>
+		<div class="col-3">
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown">
 				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown" style="background-color : #007BFF"><?= $user?></a>
@@ -125,16 +125,5 @@
   <script src="vendor2/jquery/jquery.min.js"></script>
   <script src="vendor2/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
-    <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="js/charts-home.js"></script>
-    <!-- Main File-->
-    <script src="js/front.js"></script>
-  </body>
+</body>
 </html>

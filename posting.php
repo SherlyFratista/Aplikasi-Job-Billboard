@@ -44,13 +44,13 @@
 
 
   <body class="bg-light">
-  <nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
-		<div class="col-xs-10 col-md-10 col-sm-10">
-			<a class="navbar-brand">
-                <img src ="images/JB.png" class="navbar-brand" width ="200px" height="80px">
+  <nav class="navbar navbar-expand-sm bg-light sticky-top" style="padding: 8px">
+    <div class="col-9">
+      <a class="navbar-brand" href="homepage.php" style="padding: 0">
+                <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
             </a>
-		</div>
-		<div class="col-xs-2 col-md-2 col-sm-2">
+    </div>
+		<div class="col-3">
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown">
 				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown" style="background-color : #007BFF"><?= $user?></a>
@@ -79,6 +79,7 @@
             <li><a href="admin_dashboard.php"> <i class="icon-home"></i>Home </a></li>
             <li><a href="user.php"> <i class="icon-grid"></i>Account Manager</a></li>
             <li><a href="todo.php"> <i class="icon-padnote"></i>To do List </a></li>
+            <li class="active"><a href="posting.php"> <i class="icon-check"></i>Create a Post</a></li>
             <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Post Monitoring </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="#">All Post</a></li>
@@ -164,5 +165,4 @@
   <script src="vendor2/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>

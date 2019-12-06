@@ -31,13 +31,13 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
-	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
-		<div class="col-xs-6 col-md-6 col-sm-6">
-			<a class="navbar-brand" href="homepage.php">
-                <img src ="images/JB.png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
+	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="padding: 8px; margin-bottom: 20px;">
+		<div class="col-7">
+			<a class="navbar-brand" href="homepage.php" style="padding: 0">
+                <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
             </a>
 		</div>
-		<div class="col-xs-6 col-md-6 col-sm-6">
+		<div class="col-5">
 			<ul class="navbar-nav">
 				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post_page.php">Write a post</a></li>
 				<li class="nav-item" style="margin-right: 15px">
@@ -59,19 +59,19 @@
 
 
 
-    <div class="content-inner">
-        <!-- Page Header-->
+    <?php while ($value = mysqli_fetch_row($sql)) {?>
+    <div class="container-fluid">
        <!-- Breadcrumb-->
-       <div class="breadcrumb-holder container-fluid">
-         <br>
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="homepage.php">Home</a></li>
-            <li class="breadcrumb-item active">Categories</li>
-            <li class="breadcrumb-item active">Projek Web Dashboard Menggunakan Framework Laravel</li>
-          </ul>
-        </div>
+       <header class="page-header">
+            <div class="breadcrumb-holder">
+			   <ul class="breadcrumb">
+				   <li class="breadcrumb-item"><a href="homepage.php">Home</a></li>
+				   <li class="breadcrumb-item active"><?= $value[1]?></li>
+			   </ul>
+	   		</div>
+       </header>
+       
 
-        <?php while ($value = mysqli_fetch_row($sql)) {?>
         <section>
         	<div class="container">
         		<div class="card text-center">
@@ -112,10 +112,11 @@
 				</form>
         	</div>
         </section>
+    </div>
 
     <!-- Footer -->
 
-	<hr style=" margin-top: 100px">
+	<hr style=" margin-top: 20px">
 	<footer class="text-dark" style="background-color: #c4dfe6;">
 		<div class="container-fluid text-center text-md-left">
 			<div class="row bg-light" style="height: 250px">

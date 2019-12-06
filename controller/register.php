@@ -15,7 +15,6 @@
         # code...
         echo '
           <script type="text/javascript">
-            alert("Regist success!, You are registered!")
             window.location.assign("../index.php");
           </script>';
       }else{

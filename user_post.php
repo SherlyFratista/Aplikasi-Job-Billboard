@@ -41,13 +41,13 @@
   </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
-		<div class="col-xs-8 col-md-8 col-sm-8">
-			<a class="navbar-brand" href="homepage.php">
-                <img src ="images/JB.png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
+  <nav class="navbar navbar-expand-sm bg-light sticky-top" style="padding: 8px">
+    <div class="col-9">
+      <a class="navbar-brand" href="homepage.php" style="padding: 0">
+                <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
             </a>
-		</div>
-		<div class="col-xs-3 col-md-3 col-sm-3">
+    </div>
+		<div class="col-3">
 			<ul class="navbar-nav">
 				<li class="nav-item" style="margin-right: 15px; color : #007BFF"><a class="nav-link" href="post_page.php">Write a post</a></li>
 				<li class="nav-item dropdown">

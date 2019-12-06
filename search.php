@@ -27,24 +27,21 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
-	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
-		<div class="col-xs-7 col-md-7 col-sm-7">
-			<a class="navbar-brand" href="homepage.php">
-                <img src ="images/JB.png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
+	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="padding: 8px;  margin-bottom: 20px;">
+		<div class="col-7">
+			<a class="navbar-brand" href="homepage.php" style="padding: 0">
+                <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
             </a>
 		</div>
-		<div class="col-xs-5 col-md-5 col-sm-5">
+		<div class="col-5">
 			<ul class="navbar-nav">
 				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post_page.php">Write a post</a></li>
 				<li class="nav-item" style="margin-right: 15px">
 					<form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
       					<input class="form-control mr-sm-2" type="text" name="name" required="" placeholder="Search" aria-label="Search">
-      					<input type="submit" name="submit" value="Search">
+						<input class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="submit" value="Search	">
       				</form>
-
-				
-			</form>
-      			</li>
+      			</li>	
 				<li class="nav-item dropdown">
 				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
 					<div class="dropdown-menu">
@@ -56,67 +53,73 @@
 		</div>
 	</nav>
 
-<br>
+	<div class="container-fluid">
+       <!-- Breadcrumb-->
+       <header class="page-header">
+            <div class="breadcrumb-holder">
+			   <ul class="breadcrumb">
+				   <li class="breadcrumb-item"><a href="homepage.php">Home</a></li>
+				   <li class="breadcrumb-item active">Search Result</li>
+			   </ul>
+	   		</div>
+       </header>
 
+       <section>
+			<div class="container">
+				<?php
+					//search code
+					//error_reporting(0);
 
-<br>
-<h4 class="latest-text w3_latest_text">Search Result</h4>
-</div>
+					if ($_REQUEST['submit']) {
+						# code...
+						$name = $_POST['name'];
 
-<div class = "container">
-<?php
-//search code
-//error_reporting(0);
-if($_REQUEST['submit']){
-$name = $_POST['name'];
+						if (empty($name)) {
+							# code...
+							$make = '<h4>You must type a word to search!</h4>';
+						}else{
+							$make = '<h4>No match found!</h4>';
+							$sele = "SELECT * FROM post WHERE title LIKE '%$name%'";
+							$result = mysqli_query($conn, $sele);
 
-if(empty($name)){
-	$make = '<h4>You must type a word to search!</h4>';
-}else{
-	$make = '<h4>No match found!</h4>';
-	$sele = "SELECT * FROM post WHERE title LIKE '%$name%'";
-	$result = mysqli_query($conn, $sele);
-	
-	if($mak = mysqli_num_rows($result) > 0){
-		while($row = mysqli_fetch_assoc($result)){
-      ?>
-    
-    <div class="col-md-2 w3l-movie-gride-agile">
-    <a href="StreamingPage.php?id=<?=$row['id']?>"><img src="images/<?= $row['poster'] ?>" width="350px;" height="300px;" margin-left="380px;"/>
-    </a>
-	
-            
-    <div class="mid-1">
-    <div class="w3l-movie-text">
-    <h6><a href="StreamingPage.php"><?= $row['title'] ?></a></h6>							
+							if ($mak = mysqli_num_rows($result) > 0) {
+								# code...
+								while ($row = mysqli_fetch_assoc($result)) {
+									# code...
+									?>
+									<div class="row overflow-auto">
+										<div class="col-4" style="margin-bottom: 30px">
+											<div class="card card-block" style="width: 18rem;">
+												<img class="card-img-top" src="images/<?= $row['poster'] ?>" alt="Card image cap">
+												<div class="card-body">
+													<h5 class="card-title"><?= $row['title'] ?></h5>
+													<p class="card-text"><?= $row['description'] ?></p>
+													<a href="post_detail.php" class="btn btn-primary">Read more</a>
+												</div>
+												<div class="card-footer">
+													<small class="text-muted">Last updated 3 mins ago</small>
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php
+								}
+							}else{
+								echo'<h2> Search Result</h2>';
+								print ($make);
+							}
+							mysqli_free_result($result);
+							mysqli_close($conn);
+						}
+					}
+				?>
+			</div>
+       </section>
     </div>
-                                            
-    <div class="w3l-movie-text">
-    <p><?= $row['description'] ?></p>
-    </div>   
-    
-    </div>
-    </div>
-
-
-    <?php
-	}
-}else{
-echo'<h2> Search Result</h2>';
-
-print ($make);
-}
-mysqli_free_result($result);
-mysqli_close($conn);
-}
-}
-
-?>
-</div>
 
 <!-- Footer -->
 
-<hr style=" margin-top: 100px">
+<hr style=" margin-top: 60px">
 	<footer class="text-dark" style="background-color: #c4dfe6;">
 		<div class="container-fluid text-center text-md-left">
 			<div class="row bg-light" style="height: 250px">
