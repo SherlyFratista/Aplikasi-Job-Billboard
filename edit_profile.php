@@ -15,6 +15,20 @@
 
 ?>
 
+<?php
+require ('config/connect.php');
+$fname = $_SESSION['fname'];
+$id = $_SESSION['id'];
+$user = $_SESSION['user'];
+$email = $_SESSION['email'];
+$lname = $_SESSION['lname'];
+$about = $_SESSION['about'];
+$avatar = $_SESSION['avatar'];
+
+
+$sql = mysqli_query($conn, "INSERT INTO user VALUES('','{$avatar}','{$about}')");
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -98,7 +112,7 @@
 								<label class="control-label" for="Username">Username</label>
 							</div>
 							<div class="col-xs-10 col-md-10 col-sm-10" class="col-xs-10 col-md-10 col-sm-10">
-								<input type="text" class="form-control" placeholder="Username"></input>
+								<input type="text" class="form-control" placeholder="Username" name="user"  value="<?php echo $user; ?>"></input>
 							</div>
 						</div>
 
@@ -107,7 +121,7 @@
 								<label class="control-label" for="First Name">First Name</label>
 							</div>
 							<div class="col-xs-10 col-md-10 col-sm-10">
-								<input type="text" class="form-control" placeholder="First Name"></input>
+								<input type="text" class="form-control" placeholder="First Name" name="fname"  value="<?php echo $fname; ?>"></input>
 							</div>
 								
 						</div>
@@ -116,7 +130,7 @@
 								<label class="control-label" for="Last Name">Last Name</label>
 							</div>
 							<div class="col-xs-10 col-md-10 col-sm-10">
-								<input type="text" class="form-control" placeholder="Last Name"></input>
+								<input type="text" class="form-control" placeholder="Last Name" name="lname"  value="<?php echo $lname; ?>"></input>
 							</div>
 								
 						</div>
@@ -125,7 +139,7 @@
 								<label class="control-label" for="Email">Email</label>
 							</div>
 							<div class="col-xs-10 col-md-10 col-sm-10">
-								<input type="email" class="form-control" placeholder="Email"></input>
+								<input type="email" class="form-control" placeholder="Email" name="email"  value="<?php echo $email; ?>"></input>
 							</div>
 								
 						</div>
@@ -134,7 +148,7 @@
 								<label class="control-label" for="About">About</label>
 							</div>
 							<div class="col-xs-10 col-md-10 col-sm-10">
-								<textarea class="form-control"></textarea>
+								<textarea class="form-control" name="about"></textarea>
 							</div>
 								
 						</div>
@@ -143,7 +157,7 @@
 								<label class="control-label" for="Avatar">Avatar</label>
 							</div>
 							<div class="col-xs-10 col-md-10 col-sm-10">
-								<input type="file" class="form-control" placeholder="Avatar"></input>
+								<input type="file" class="form-control" placeholder="Avatar" name="avatar"></input>
 							</div>
 								
 						</div>

@@ -95,15 +95,16 @@
 
         <section>
         	<div class="container" style="padding: 0">
-				<form method="POST" action="">
+				<form method="POST" action="PostComment.php">
 				    <div class="form-group">
 				        <label class="control-label col-sm-2">Comment</label>
 				        <div class="col-sm-10">
-				        <textarea class="form-control" id="desc" rows="5" placeholder="Enter Comment here" name="comment"></textarea>
+				        <textarea class="form-control" id="desc" rows="5" placeholder="Enter Comment here" name="comment" type="comment"></textarea>
 				        </div>
 				    </div>
-				                        
-				   
+					<hr>
+					<?php include "viewcomment.php"; ?>
+				        
 				    <div class="form-group">        
 				    <div class="col-sm-offset-2 col-sm-10">
 				        <button type="submit" class="btn btn-default" name="submit">Submit</button>

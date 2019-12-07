@@ -80,7 +80,7 @@
             </div>
             <div class="col-md-9">
                 <div class="contact-form">
-                    <form action = "controller/create.php" method="POST" enctype="multipart/form-data">
+                    <form action = "" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <br>
                             <label class="control-label col-sm-2" >Title</label>

@@ -14,6 +14,18 @@
 
 ?>
 
+<?php
+require ('config/connect.php');
+$fname = $_SESSION['fname'];
+$id = $_SESSION['id'];
+$user = $_SESSION['user'];
+$email = $_SESSION['email'];
+$lname = $_SESSION['lname'];
+$avatar = $_SESSION['avatar'];
+$about = $_SESSION['about'];
+?>
+
+
 <!DOCTYPE html>
 <html>
 <!DOCTYPE html>
@@ -87,8 +99,21 @@
               <h2 class="no-margin-bottom">My Profile</h2>
             </div>
           </header>
-          
+
           <section>
+          	<div class="container-fluid">
+          		<div class="container" style="padding: 20px 20px; border-radius: 20px; box-shadow: 0px 0px 10px -6px" align="center">
+                <img src="images/<?php echo $user; ?>/<?php echo $avatar; ?>" class="rounded-circle" style="width: 300px;" height="300px;" alt="profile"></a>
+                 <h2><?php echo $user; ?></h2>
+                 <h2><?php echo $email; ?></h2>
+                 <h2><?php echo $about; ?></h2>
+          		</div>
+          	</div>
+          </section>
+    </div>
+    </div>
+          
+          <!-- <section>
           	<div class="container-fluid">
           		<div class="container" style="padding: 20px 20px; border-radius: 20px; box-shadow: 0px 0px 10px -6px" align="center">
           			<img src="https://dummyimage.com/200x200/333333/fff.png" class="rounded-circle" alt="Profile"><hr>
@@ -100,7 +125,7 @@
           	</div>
           </section>
     </div>
-    </div>
+    </div> -->
   
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
