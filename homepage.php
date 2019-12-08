@@ -12,12 +12,11 @@
 	$user = $_SESSION['user'];
 	$status = $_SESSION['status'];
 
-	$result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project1%' ");
-	$result2 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project2%' ");
-	$a = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten1%' ");
-	$b = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Asisten2%' ");
-	$c = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Tutor%' ");
-	$result4 = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Trending%' ");
+	$result = mysqli_query($conn, "SELECT * FROM post");
+	$project = mysqli_query($conn, "SELECT * FROM post WHERE kategori LIKE '%Project%' ");
+	$asisten = mysqli_query($conn, "SELECT * FROM post WHERE kategori LIKE '%Asisten%' ");
+	$tutor = mysqli_query($conn, "SELECT * FROM post WHERE kategori LIKE '%Tutor%' ");
+	$trending = mysqli_query($conn, "SELECT * FROM post WHERE kategori LIKE '%Trending%' ");
 ?>
 
 <!DOCTYPE html>
@@ -33,14 +32,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
-	<script type="text/javascript">
-		if (window.parentPage) {
-			swal("Good job!", "You clicked the button!", "success");
-		}
-	</script>
 	<nav class="navbar navbar-expand-xs navbar-expand-sm navbar-expand-md bg-light sticky-top" style="">
 		<div class="col-7">
 			<a class="navbar-brand" href="homepage.php" style="padding: 0">
@@ -67,28 +60,37 @@
 		</div>
 	</nav>
 
-    <?php
-    while ($select = mysqli_fetch_assoc($result)){ ?>
 	<div class="container-fluid" style="margin-bottom: 60px">
 	<h2 style="margin-top: 60px">Trending</h2>
 		<div id="myShow" class="carousel slide" data-ride="carousel">
 			<ul class="carousel-indicators">
 				<li data-target="#myShow" data-slide-to="0" class="active"></li>
-                <li data-target="#myShow" data-slide-to="1"></li>
+				<?php
+			    	foreach($trending as $data){
+			    ?>
+                <li data-target="#myShow" data-slide-to="<?= $data["id"]?>"></li>
+                <?php
+            	}
+			    ?>	
 			</ul>
 
-			<div class="carousel-inner">
-                <?php
-                 foreach($result4 as $data){
-                ?>
+			<div class="carousel-inner" style=" width:100%; height: 500px !important;">
 				<div class="carousel-item active">
+				<?php
+			    	foreach($trending as $data){
+			    			echo '
+			    			</div><div class="carousel-item">
+			    			';
+			    ?>
 					<img src="images/<?= $data["poster"] ?>" class="img-fluid">
 					<div class="carousel-caption">
 	   					<h3><?= $data["title"] ?></h3>
 	    				<p><?= $data["description"] ?></p>
 	  				</div>
-                </div>
-                <?php }?>
+                <?php
+            	}
+			    ?>	
+				</div>
 			</div>
 
 			<a class="carousel-control-prev" href="#myShow" data-slide="prev">
@@ -101,159 +103,167 @@
 	</div>
 
 
-    
-
     <!-- Kategori 1 -->
-
 	<hr id="project">
-
 	<div class="container-fluid" style="; padding: 30px 0px">
-	<div class="container" style="padding: 0px 10px; margin-bottom: 20px">
-		<div class="row">
-			<div class="col-xs-11 col-sm-11 col-md-11" style="margin-left:20px;"><h4>Project</h4></div>
-		</div>
-    </div>
-    
-	<div id="demo" class="carousel slide" data-ride="carousel">
-	<div class="container carousel-inner" style="padding: 0px">
-
-    <div class="carousel-item active" style="margin: 0px 4px">
-    <?php
-    foreach($result as $data){
-    ?>
-        <div class="col-xs-3 col-sm-3 col-md-3">
-	    <a href="post_detail.php">
-	    <img src="images/<?= $data["poster"] ?>" class="rounded img-fluid"> 
-	    <div class="carousel-caption">
-	    <h6><?= $data["title"] ?></h6>
+		<div class="container" style="padding: 0px 10px; margin-bottom: 20px">
+			<div class="row">
+				<div class="col-xs-11 col-sm-11 col-md-11" style="margin-left:20px;">
+					<h4>Project</h4>
+				</div>
+			</div>
 	    </div>
-	    </a>
-	</div>
-    <?php }?>
-</div>
-
-    <div class="carousel-item" style="margin: 0px 4px">
-    <?php
-    foreach($result2 as $data){
-    ?>
-		<div class="col-xs-3 col-sm-3 col-md-3">
-		<a href="post_detail.php">
-		<img src="images/<?= $data["poster"] ?>" class="rounded img-fluid"> 
-		<div class="carousel-caption">
-		<h6><?= $data["title"] ?></h6>
-		</div>
-		</a>
-		</div>
-        <?php }?>
-					
-	</div>
-</div>
-		
-    
-	<a class="carousel-control-prev" href="#demo" data-slide="prev">
-	<span class="carousel-control-prev-icon"></span>
-	</a>
-              
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-	<span class="carousel-control-next-icon"></span>
-    </a>
-                  
-    </div> 
+	    
+		<div id="demo" class="carousel slide" data-ride="carousel">
+			<div class="container carousel-inner" style="padding: 0px">
+			    <div class="carousel-item active" style="margin: 0px 4px">
+			    <?php
+			    	$i = 1;
+			    	foreach($project as $data){
+			    		if ($i % 4 == 0) {
+			    			# code...
+			    			echo '
+			    			</div><div class="carousel-item" style="margin: 0px 4px">
+			    			';
+			    		}
+			    ?>
+				    <div class="col-xs-3 col-sm-3 col-md-3">
+				    	<div class="card" style="height: 30rem;">
+							<img class="card-img-top" src="images/<?= $data["poster"] ?>" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title"><?= $data["title"] ?></h5>
+								<a href="post_detail.php" class="btn btn-primary">Read more</a>
+							</div>
+							<div class="card-footer">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</div>
+						</div>
+					</div>
+			    <?php
+			    	$i++;}
+			    ?>			    
+				</div>
+			</div>
+			
+			<a class="carousel-control-prev" href="#demo" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+		              
+		    <a class="carousel-control-next" href="#demo" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+		    </a>
+	                  
+	    </div> 
     </div>
 
 
     <!-- Kategori 2 -->
-
 	<hr id="asisten">
-
 	<div class="container-fluid" style="; padding: 30px 0px">
-	<div class="container" style="padding: 0px 10px; margin-bottom: 20px">
-		<div class="row">
-			<div class="col-xs-11 col-sm-11 col-md-11" style="margin-left:20px;"><h4>Asisten Praktikum</h4></div>
+		<div class="container" style="padding: 0px 10px; margin-bottom: 20px">
+			<div class="row">
+				<div class="col-xs-11 col-sm-11 col-md-11" style="margin-left:20px;">
+					<h4>Asisten Praktikum</h4>
+				</div>
 			</div>
-    </div>
-    
-	<div id="demo2" class="carousel slide" data-ride="carousel">
-	<div class="container carousel-inner" style="padding: 0px">
-
-    <div class="carousel-item active" style="margin: 0px 4px">
-    <?php
-    foreach($a as $data){
-    ?>
-        <div class="col-xs-3 col-sm-3 col-md-3">
-	    <a href="post_detail.php">
-	    <img src="images/<?= $data["poster"] ?>" class="rounded img-fluid"> 
-	    <div class="carousel-caption">
-	    <h6><?= $data["title"] ?></h6>
 	    </div>
-	    </a>
-	</div>
-    <?php }?>
-</div>
-
-    <div class="carousel-item" style="margin: 0px 4px">
-    <?php
-    foreach($b as $data){
-    ?>
-		<div class="col-xs-3 col-sm-3 col-md-3">
-		<a href="post_detail.php">
-		<img src="images/<?= $data["poster"] ?>" class="rounded img-fluid"> 
-		<div class="carousel-caption">
-		<h6><?= $data["title"] ?></h6>
-		</div>
-		</a>
-		</div>
-        <?php }?>
-					
-	</div>
-</div>
-		
     
-	<a class="carousel-control-prev" href="#demo2" data-slide="prev">
-	<span class="carousel-control-prev-icon"></span>
-	</a>
-              
-    <a class="carousel-control-next" href="#demo2" data-slide="next">
-	<span class="carousel-control-next-icon"></span>
-    </a>
-                  
-    </div> 
-    </div>
+		<div id="demo2" class="carousel slide" data-ride="carousel">
+			<div class="container carousel-inner" style="padding: 0px">
+			    <div class="carousel-item active" style="margin: 0px 4px">
+			    <?php
+			    	$i = 1;
+			    	foreach($asisten as $data){
+			    		if ($i % 4 == 0) {
+			    			# code...
+			    			echo '
+			    			</div><div class="carousel-item" style="margin: 0px 4px">
+			    			';
+			    		}
+			    ?>
+			        <div class="col-xs-3 col-sm-3 col-md-3">
+				    	<div class="card" style="height: 30rem;">
+							<img class="card-img-top" src="images/<?= $data["poster"] ?>" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title"><?= $data["title"] ?></h5>
+								<a href="post_detail.php" class="btn btn-primary">Read more</a>
+							</div>
+							<div class="card-footer">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</div>
+						</div>
+					</div>
+			    <?php
+			    	$i++;}
+			    ?>
+				</div>
+			</div>
+	    
+			<a class="carousel-control-prev" href="#demo2" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+		              
+		    <a class="carousel-control-next" href="#demo2" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+		    </a>
+		</div>
+	</div>
 
 
     <!-- Kategori 3 -->
-
 	<hr id="tutor">
-
 	<div class="container-fluid" style="; padding: 30px 0px">
-	<div class="container" style="padding: 0px 10px; margin-bottom: 20px">
-		<div class="row" id="">
-			<div class="col-xs-11 col-sm-11 col-md-11" style="margin-left:20px;"><h4>Tutor Mata Kuliah</h4></div>
-        </div>
-	</div>
-    
-    <div id="demo3" class="carousel slide" data-ride="carousel">
-	<div class="container carousel-inner	" style="padding: 0px">
-    <div class="carousel-item active" style="margin: 0px 4px">
-    <?php
-    foreach($c as $data){
-    ?>
-        <div class="col-xs-3 col-sm-3 col-md-3">
-	    <a href="post_detail.php">
-	    <img src="images/<?= $data["poster"] ?>" class="rounded img-fluid"> 
-	    <div class="carousel-caption">
-	    <h6><?= $data["title"] ?></h6>
-	    </div>
-	    </a>
-	</div>
-    <?php }?>
-</div>
-    
-    <?php } ?>
-    </div>
-    </div>
-    <!-- Footer -->
+		<div class="container" style="padding: 0px 10px; margin-bottom: 20px">
+			<div class="row" id="">
+				<div class="col-xs-11 col-sm-11 col-md-11" style="margin-left:20px;">
+					<h4>Tutor Mata Kuliah</h4>
+				</div>
+	        </div>
+		</div>
+	    
+	    <div id="demo3" class="carousel slide" data-ride="carousel">
+			<div class="container carousel-inner" style="padding: 0px">
+			    <div class="carousel-item active" style="margin: 0px 4px">
+			    <?php
+			    	$i = 1;
+			    	foreach($tutor as $data){
+			    		if ($i % 4 == 0) {
+			    			# code...
+			    			echo '
+			    			</div><div class="carousel-item" style="margin: 0px 4px">
+			    			';
+			    		}
+			    ?>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+				    	<div class="card" style="height: 30rem;">
+							<img class="card-img-top" src="images/<?= $data["poster"] ?>" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title"><?= $data["title"] ?></h5>
+								<a href="post_detail.php" class="btn btn-primary">Read more</a>
+							</div>
+							<div class="card-footer">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</div>
+						</div>
+					</div>
+		        <?php
+			    	$i++;}
+			    ?>		
+				</div>
+		    </div>
 
+	    	<a class="carousel-control-prev" href="#demo3" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+		              
+		    <a class="carousel-control-next" href="#demo3" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+		    </a>
+	    </div>
+    </div>
+
+
+    <!-- Footer -->
 	<hr style=" margin-top: 100px">
 	<footer class="text-dark" style="background-color: #c4dfe6;">
 		<div class="container-fluid text-center text-md-left">
@@ -270,10 +280,10 @@
 						<h5 class="text-primary">Contact Us</h5>
 						<p class="text-dark"><i class="fa fa-phone mr-md-3"></i>+62 22-1234567</p>
 						<p class="text-dark"><i class="fa fa-envelope mr-md-3"></i>kelompok15@JobBillboard.com</a></p>
-						<a href="#"><i class="fab fa-facebook fa-2x text-dark mr-md-5"></i></a>
-						<a href="#"><i class="fab fa-google-plus fa-2x text-dark mr-md-5"></i></a>
-						<a href="#"><i class="fab fa-twitter fa-2x text-dark mr-md-5"></i></a>
-						<a href="#"><i class="fab fa-youtube fa-2x text-dark mr-md-5"></i></a>
+						<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x text-dark mr-md-5"></i></a>
+						<a href="https://aboutme.google.com/u/0/?referer=gplus" target="_blank"><i class="fab fa-google-plus fa-2x text-dark mr-md-5"></i></a>
+						<a href="https://twitter.com/login" target="_blank"><i class="fab fa-twitter fa-2x text-dark mr-md-5"></i></a>
+						<a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube fa-2x text-dark mr-md-5"></i></a>
 					</div>
 				</div>
 				<div class="col-sm-4 col-md-4 col-xs-4">

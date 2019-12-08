@@ -133,10 +133,10 @@
 						<h5 class="text-primary">Contact Us</h5>
 						<p class="text-dark"><i class="fa fa-phone mr-md-3"></i>+62 22-1234567</p>
 						<p class="text-dark"><i class="fa fa-envelope mr-md-3"></i>kelompok15@JobBillboard.com</a></p>
-						<a href="#"><i class="fab fa-facebook fa-2x text-dark mr-md-5"></i></a>
-						<a href="#"><i class="fab fa-google-plus fa-2x text-dark mr-md-5"></i></a>
-						<a href="#"><i class="fab fa-twitter fa-2x text-dark mr-md-5"></i></a>
-						<a href="#"><i class="fab fa-youtube fa-2x text-dark mr-md-5"></i></a>
+						<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x text-dark mr-md-5"></i></a>
+						<a href="https://aboutme.google.com/u/0/?referer=gplus" target="_blank"><i class="fab fa-google-plus fa-2x text-dark mr-md-5"></i></a>
+						<a href="https://twitter.com/login" target="_blank"><i class="fab fa-twitter fa-2x text-dark mr-md-5"></i></a>
+						<a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube fa-2x text-dark mr-md-5"></i></a>
 					</div>
 				</div>
 				<div class="col-sm-4 col-md-4 col-xs-4">

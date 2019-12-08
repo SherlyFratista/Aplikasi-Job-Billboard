@@ -20,8 +20,10 @@
             move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
 
             if($sql){
+                echo "alert('Berhasil')";
                 echo "<script>window.location.href='../post_page.php'</script>";
              }else{
+                echo "alert('Berhasil')";
                 echo "<script>window.location.href='../post_page.php'</script>";
                 echo mysqli_error();
             }

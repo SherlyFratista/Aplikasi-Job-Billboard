@@ -12,7 +12,7 @@
   $user = $_SESSION['user'];
   $status = $_SESSION['status'];
 
-  $result = mysqli_query($conn, "SELECT*FROM post WHERE kategori LIKE '%Project%' ");
+  $result = mysqli_query($conn, "SELECT * FROM post WHERE kategori LIKE '%Project%'");
 ?>
 
 <!DOCTYPE html>
@@ -212,7 +212,6 @@
                       
                     </div>
                   </div>
-                  
                 </div>
                 
               </div>

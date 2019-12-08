@@ -29,16 +29,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/post-style.css">
     <script type="text/javascript">
         $('#BSbtninfo').filestyle({ 
         buttonName : 'btn-info',
         buttonText : ' Select a File'
-        });
-
-        $('form').on('submit',function(){
-           alert('submitted');
         });
     </script>
 
@@ -80,7 +75,7 @@
             </div>
             <div class="col-md-9">
                 <div class="contact-form">
-                    <form action = "" method="POST" enctype="multipart/form-data">
+                    <form action = "controller/create.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <br>
                             <label class="control-label col-sm-2" >Title</label>
@@ -129,7 +124,6 @@
     </div>
 
     <!-- Footer -->
-        
     <footer class="text-dark" style="background-color: #c4dfe6;">
         <div class="container-fluid text-center text-md-left">
             <div class="row bg-light" style="height: 250px">
@@ -145,10 +139,10 @@
                         <h5 class="text-primary">Contact Us</h5>
                         <p class="text-dark"><i class="fa fa-phone mr-md-3"></i>+62 22-1234567</p>
                         <p class="text-dark"><i class="fa fa-envelope mr-md-3"></i>kelompok15@JobBillboard.com</a></p>
-                        <a href="#"><i class="fab fa-facebook fa-2x text-dark mr-md-5"></i></a>
-                        <a href="#"><i class="fab fa-google-plus fa-2x text-dark mr-md-5"></i></a>
-                        <a href="#"><i class="fab fa-twitter fa-2x text-dark mr-md-5"></i></a>
-                        <a href="#"><i class="fab fa-youtube fa-2x text-dark mr-md-5"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x text-dark mr-md-5"></i></a>
+                        <a href="https://aboutme.google.com/u/0/?referer=gplus" target="_blank"><i class="fab fa-google-plus fa-2x text-dark mr-md-5"></i></a>
+                        <a href="https://twitter.com/login" target="_blank"><i class="fab fa-twitter fa-2x text-dark mr-md-5"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube fa-2x text-dark mr-md-5"></i></a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-4 col-xs-4">
