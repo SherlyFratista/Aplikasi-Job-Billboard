@@ -17,6 +17,8 @@
 	$asisten = mysqli_query($conn, "SELECT * FROM post WHERE kategori LIKE '%Asisten%' ");
 	$tutor = mysqli_query($conn, "SELECT * FROM post WHERE kategori LIKE '%Tutor%' ");
 	$trending = mysqli_query($conn, "SELECT * FROM post WHERE kategori LIKE '%Trending%' ");
+	$e = mysqli_query($conn, "SELECT*FROM message ");
+	$d = mysqli_query($conn, "SELECT*FROM notif ");
 ?>
 
 <!DOCTYPE html>
@@ -34,21 +36,64 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
-	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="padding: 8px;  margin-bottom: 20px;">
-		<div class="col-7">
-			<a class="navbar-brand" href="homepage.php" style="padding: 0">
-                <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
+<?php
+    while ($select = mysqli_fetch_assoc($d)){ ?>
+	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
+		<div class="col-xs-6 col-md-6 col-sm-6">
+			<a class="navbar-brand" href="homepage.php">
+                <img src ="images/logojb (2).png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
             </a>
 		</div>
-		<div class="col-5">
+		<div class="col-xs-6 col-md-6 col-sm-6">
 			<ul class="navbar-nav">
 				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post_page.php">Write a post</a></li>
 				<li class="nav-item" style="margin-right: 15px">
 					<form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
-      					<input class="form-control mr-sm-2" type="text" name="name" required="" placeholder="Search" aria-label="Search">
-						<input class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="submit" value="Search	">
+      					<input class="form-control mr-sm-2" type="text" name="name" required="" placeholder="Search" aria-label="Search"> 	
+						<input class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="submit" value="Go">
       				</form>
-      			</li>	
+				  </li>
+
+				  <!-- Notifications-->
+				  <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell bg-green"></i><span class="badge bg-red badge-corner">12</span></a>
+                <ul aria-labelledby="notifications" class="dropdown-menu">
+                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                      <div class="notification">
+				  <?php
+                 	foreach($d as $data){
+                	?>
+					<div class="notification-content"><a href="message.php"><i class="<?= $data["icon"] ?>"></i><?= $data["notif"] ?> </a> </div>
+                        <div class="notification-time"><small><?= $data["waktu"] ?></small></div>
+					  </div></a></li>
+
+                     
+					  <?php }?>
+					  
+                
+                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+                </ul>
+              </li>
+				  
+				 
+
+
+              <!-- Messages -->
+              <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope bg-green"></i><span class="badge bg-orange badge-corner">10</span></a>
+                <ul aria-labelledby="notifications" class="dropdown-menu">
+                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+				  <?php
+                 	foreach($e as $data){
+                	?>
+                      <div class="msg-profile"> <img src="<?= $data["image"] ?>" alt="..." class="img-fluid rounded-circle"></div>
+                      <div class="msg-body">
+                        <h3 class="h5"><?= $data["user"] ?></h3><span><?= $data["message"] ?></span>
+					  </div></a></li>
+					  <?php }?>
+					  <?php }?>  
+                
+                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+                </ul>
+              </li>
 				<li class="nav-item dropdown">
 				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
 					<div class="dropdown-menu">
@@ -60,6 +105,8 @@
 		</div>
 	</nav>
 
+<br><br>
+	<div class = "container">
 	<div class="container-fluid">
        <!-- Breadcrumb-->
        <header class="page-header">
@@ -69,6 +116,7 @@
 				   <li class="breadcrumb-item active">Search Result</li>
 			   </ul>
 	   		</div>
+			   </div>
        </header>
 
        <section>

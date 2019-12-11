@@ -178,7 +178,7 @@
 							<img class="card-img-top" src="images/<?= $data["poster"] ?>" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title"><?= $data["title"] ?></h5>
-								<a href="post_detail.php" class="btn btn-primary">Read more</a>
+								<a href="post_detail.php?id=<?=$data['id']?>" class="btn btn-primary">Read more</a>
 							</div>
 							<div class="card-footer">
 								<small class="text-muted">Last updated 3 mins ago</small>
@@ -232,7 +232,7 @@
 							<img class="card-img-top" src="images/<?= $data["poster"] ?>" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title"><?= $data["title"] ?></h5>
-								<a href="post_detail.php" class="btn btn-primary">Read more</a>
+								<a href="post_detail.php?id=<?=$data['id']?>" class="btn btn-primary">Read more</a>
 							</div>
 							<div class="card-footer">
 								<small class="text-muted">Last updated 3 mins ago</small>
@@ -285,7 +285,7 @@
 							<img class="card-img-top" src="images/<?= $data["poster"] ?>" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title"><?= $data["title"] ?></h5>
-								<a href="post_detail.php" class="btn btn-primary">Read more</a>
+								<a href="post_detail.php?id=<?=$data['id']?>" class="btn btn-primary">Read more</a>
 							</div>
 							<div class="card-footer">
 								<small class="text-muted">Last updated 3 mins ago</small>
