@@ -90,7 +90,7 @@ $about = $_SESSION['about'];
           <ul class="list-unstyled">
             <li class="active"><a href="user_dashboard.php"> <i class="icon-home"></i>My Profile</a></li>
             <li><a href="edit_profile.php"> <i class="icon-grid"></i>Edit Profile</a></li>
-            <li><a href="user_post.php"> <i class="icon-padnote"></i>My Post</a></li>
+            <li><a href="user_post.php"> <i class="icon-padnote"></i>Inbox</a></li>
         </nav>
         <div class="content-inner">
           <!-- Page Header-->

@@ -37,7 +37,7 @@
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
 <?php
-    while ($select = mysqli_fetch_assoc($d)){ ?>
+    while ($select = mysqli_fetch_assoc($e)){ ?>
 	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
 		<div class="col-xs-6 col-md-6 col-sm-6">
 			<a class="navbar-brand" href="homepage.php">
@@ -54,41 +54,28 @@
       				</form>
 				  </li>
 
-				  <!-- Notifications-->
-				  <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell bg-green"></i><span class="badge bg-red badge-corner">12</span></a>
-                <ul aria-labelledby="notifications" class="dropdown-menu">
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification">
-				  <?php
-                 	foreach($d as $data){
-                	?>
-					<div class="notification-content"><i class="<?= $data["icon"] ?>"></i><?= $data["notif"] ?> </div>
-                        <div class="notification-time"><small><?= $data["waktu"] ?></small></div>
-					  </div></a></li>
-
-                     
-					  <?php }?>
-					  
-                
-                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
-                </ul>
-              </li>
+				
 				  
 				 
 
 
               <!-- Messages -->
+			  
               <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope bg-green"></i><span class="badge bg-orange badge-corner">10</span></a>
-                <ul aria-labelledby="notifications" class="dropdown-menu">
-                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-				  <?php
+                
+				<ul aria-labelledby="notifications" class="dropdown-menu">
+				<?php
                  	foreach($e as $data){
                 	?>
-                      <div class="msg-profile"> <img src="<?= $data["image"] ?>" alt="..." class="img-fluid rounded-circle"></div>
+                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+				  
+                   
                       <div class="msg-body">
-                        <h3 class="h5"><?= $data["user"] ?></h3><span><?= $data["message"] ?></span>
-					  </div></a></li>
+                        <h6 style="font-size:14px;">You have a message from <?= $data["user"] ?></h6>
+						<p style="font-size:12px;"><?= $data["message"] ?></p>
+					  </div></a>
 					  <?php }?>
+					  </li>
 					  <?php }?>  
                 
                   <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
@@ -109,42 +96,22 @@
 	<div class="container-fluid" style="margin-bottom: 60px">
 	<h2 style="margin-top: 60px">Trending</h2>
 		<div id="myShow" class="carousel slide" data-ride="carousel">
-			<ul class="carousel-indicators">
-				<li data-target="#myShow" data-slide-to="0" class="active"></li>
-				<?php
-			    	foreach($trending as $data){
-			    ?>
-                <li data-target="#myShow" data-slide-to="<?= $data["id"]?>"></li>
-                <?php
-            	}
-			    ?>	
-			</ul>
 
-			<div class="carousel-inner" style=" width:100%; height: 500px !important;">
+
+			<div class="carousel-inner">
+                <?php
+                 foreach($trending as $data){
+                ?>
 				<div class="carousel-item active">
-				<?php
-			    	foreach($trending as $data){
-			    			echo '
-			    			</div><div class="carousel-item">
-			    			';
-			    ?>
 					<img src="images/<?= $data["poster"] ?>" class="img-fluid">
 					<div class="carousel-caption">
 	   					<h3><?= $data["title"] ?></h3>
 	    				<p><?= $data["description"] ?></p>
 	  				</div>
-                <?php
-            	}
-			    ?>	
-				</div>
+                </div>
+                <?php }?>
 			</div>
 
-			<a class="carousel-control-prev" href="#myShow" data-slide="prev">
-	    		<span class="carousel-control-prev-icon"></span>
-	  		</a>
-	  		<a class="carousel-control-next" href="#myShow" data-slide="next">
-	    		<span class="carousel-control-next-icon"></span>
-	  		</a>
 		</div>
 	</div>
 
@@ -181,7 +148,7 @@
 								<a href="post_detail.php?id=<?=$data['id']?>" class="btn btn-primary">Read more</a>
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">Last updated 3 mins ago</small>
+								<small class="text-muted">Deadline <?= $data["deadline"] ?></small>
 							</div>
 						</div>
 					</div>
@@ -235,7 +202,7 @@
 								<a href="post_detail.php?id=<?=$data['id']?>" class="btn btn-primary">Read more</a>
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">Last updated 3 mins ago</small>
+								<small class="text-muted">Deadline <?= $data["deadline"] ?></small>
 							</div>
 						</div>
 					</div>
@@ -288,7 +255,7 @@
 								<a href="post_detail.php?id=<?=$data['id']?>" class="btn btn-primary">Read more</a>
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">Last updated 3 mins ago</small>
+								<small class="text-muted">Deadline <?= $data["deadline"] ?></small>
 							</div>
 						</div>
 					</div>

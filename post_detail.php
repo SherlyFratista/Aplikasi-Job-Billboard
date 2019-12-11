@@ -36,7 +36,7 @@
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
 <?php
-    while ($select = mysqli_fetch_assoc($d)){ ?>
+    while ($select = mysqli_fetch_assoc($e)){ ?>
 	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
 		<div class="col-xs-6 col-md-6 col-sm-6">
 			<a class="navbar-brand" href="homepage.php">
@@ -53,41 +53,28 @@
       				</form>
 				  </li>
 
-				  <!-- Notifications-->
-				  <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell bg-green"></i><span class="badge bg-red badge-corner">12</span></a>
-                <ul aria-labelledby="notifications" class="dropdown-menu">
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification">
-				  <?php
-                 	foreach($d as $data){
-                	?>
-					<div class="notification-content"><i class="<?= $data["icon"] ?>"></i><?= $data["notif"] ?> </div>
-                        <div class="notification-time"><small><?= $data["waktu"] ?></small></div>
-					  </div></a></li>
-
-                     
-					  <?php }?>
-					  
-                
-                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
-                </ul>
-              </li>
+				
 				  
 				 
 
 
               <!-- Messages -->
+			  
               <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope bg-green"></i><span class="badge bg-orange badge-corner">10</span></a>
-                <ul aria-labelledby="notifications" class="dropdown-menu">
-                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-				  <?php
+                
+				<ul aria-labelledby="notifications" class="dropdown-menu">
+				<?php
                  	foreach($e as $data){
                 	?>
-                      <div class="msg-profile"> <img src="<?= $data["image"] ?>" alt="..." class="img-fluid rounded-circle"></div>
+                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+				  
+                   
                       <div class="msg-body">
-                        <h3 class="h5"><?= $data["user"] ?></h3><span><?= $data["message"] ?></span>
-					  </div></a></li>
+                        <h6 style="font-size:14px;">You have a message from <?= $data["user"] ?></h6>
+						<p style="font-size:12px;"><?= $data["message"] ?></p>
+					  </div></a>
 					  <?php }?>
+					  </li>
 					  <?php }?>  
                 
                   <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
@@ -123,17 +110,46 @@
 
         <section>
         	<div class="container">
-        		<div class="card text-center">
+        		<div class="card">
 				  <div class="card-header">
 				    <?= $value[5]?>
 				  </div>
 				  <div class="card-body">
-				    <h5 class="card-title"><?= $value[1]?></h5>
-				    <img src="images/<?= $value[4]?>" width="300" height="300">
-				    <p class="card-text"><?= $value[3]?></p>
+				    <h5 class="card-title" style="text-align:center"><?= $value[1]?></h5>
+				   <center> <img src="images/<?= $value[4]?>" width="300" height="300" > </center> 
+				   <p class="card-text" ><br><?= $value[3]?></p>
+					<a class="btn btn btn-success new-message" href="#" data-toggle="modal" data-target="#modalMessage" > <i class="fa fa-envelope"></i> Kirim Pesan </a>
+
+<!-- Modal Message -->
+<div class="modal fade" id="modalMessage">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content" style="padding: 20px 0px">
+<div class="modal-header">
+<h4 class="modal-title">Kirim Pesan</h4>
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+<div class="modal-body">
+<form method="POST" action="controller/send.php">
+<div class="form-group">
+<label> Untuk </label> <br>
+<input class="form-control" type="text" name="user" placeholder="Masukkan Username" required></input>
+</div>
+<div class="form-group">
+<label> Pesan </label>
+<input class="form-control" type="text" name="message" placeholder="Masukkan Pesan" required></input>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-primary" type="submit" name="submit" value="submit" style="width: 100%">Kirim</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+
 				  </div>
 				  <div class="card-footer text-muted">
-				    <?= $value[2]?>
+				   Deadline <?= $value[2]?>
 				  </div>
 				</div>
         	</div>
@@ -181,6 +197,8 @@
 								</div>
 							</div>
     </div>
+	</div>
+	</div>
 	<?php } ?>
     <!-- Footer -->
 

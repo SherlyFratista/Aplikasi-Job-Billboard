@@ -11,6 +11,7 @@
 	}
     $user = $_SESSION['user'];
     $status = $_SESSION['status'];
+    $e = mysqli_query($conn, "SELECT*FROM message ");
 
 ?>
 
@@ -39,32 +40,63 @@
 
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
-    <nav class="navbar navbar-expand-sm bg-light sticky-top" style="padding: 8px">
-        <div class="col-7">
-            <a class="navbar-brand" href="homepage.php" style="padding: 0">
-                <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
+<?php
+    while ($select = mysqli_fetch_assoc($e)){ ?>
+<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
+		<div class="col-xs-6 col-md-6 col-sm-6">
+			<a class="navbar-brand" href="homepage.php">
+                <img src ="images/logojb (2).png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
             </a>
-        </div>
-        <div class="col-5">
-            <ul class="navbar-nav">
-                <li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="homepage.php">Home</a></li>
-                <li class="nav-item" style="margin-right: 15px">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </li>
-                <li class="nav-item dropdown">
-                <a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
-                        <a class="dropdown-item" href="controller/logout.php">Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    
+		</div>
+		<div class="col-xs-6 col-md-6 col-sm-6">
+			<ul class="navbar-nav">
+				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post_page.php">Write a post</a></li>
+				<li class="nav-item" style="margin-right: 15px">
+					<form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
+      					<input class="form-control mr-sm-2" type="text" name="name" required="" placeholder="Search" aria-label="Search"> 	
+						<input class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="submit" value="Go">
+      				</form>
+				  </li>
+
+				
+				  
+				 
+
+
+              <!-- Messages -->
+			  
+              <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope bg-green"></i><span class="badge bg-orange badge-corner">10</span></a>
+                
+				<ul aria-labelledby="notifications" class="dropdown-menu">
+				<?php
+                 	foreach($e as $data){
+                	?>
+                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+				  
+                   
+                      <div class="msg-body">
+                        <h6 style="font-size:14px;">You have a message from <?= $data["user"] ?></h6>
+						<p style="font-size:12px;"><?= $data["message"] ?></p>
+					  </div></a>
+					  <?php }?>
+					  </li>
+					  <?php }?>  
+                
+                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+                </ul>
+              </li>
+				<li class="nav-item dropdown">
+				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
+						<a class="dropdown-item" href="controller/logout.php">Logout</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+  
     <div class="container" style="margin: 60px auto">
         <div class="row">
             <div class="col-md-3">
@@ -87,7 +119,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="lname">Deadline</label>
                             <div class="col-sm-10">          
-                            <input type="date" class="form-control" name="deadline" required>
+                            <input type="text" class="form-control" id="deadline" placeholder="Enter Deadline Here" name="deadline" required>
                             </div>
                         </div>
                                             

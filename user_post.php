@@ -11,7 +11,7 @@
 	}
   $user = $_SESSION['user'];
   $status = $_SESSION['status'];
-
+  $e = mysqli_query($conn, "SELECT*FROM message ");
 ?>
 
 <!DOCTYPE html>
@@ -78,21 +78,21 @@
           <ul class="list-unstyled">
             <li><a href="user_dashboard.php"> <i class="icon-home"></i>My Profile</a></li>
             <li><a href="edit_profile.php"> <i class="icon-grid"></i>Edit Profile</a></li>
-            <li class="active"><a href="user_post.php"> <i class="icon-padnote"></i>My Post</a></li>
+            <li class="active"><a href="user_post.php"> <i class="icon-padnote"></i>Inbox</a></li>
         </nav>
 
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h2 class="no-margin-bottom">My Post</h2>
+              <h2 class="no-margin-bottom">Inbox</h2>
             </div>
           </header>
           
           <section>
           	<div class="container-fluid">
           		<div class="container" style="padding: 20px 20px; border-radius: 20px; box-shadow: 0px 0px 10px -6px">
-          			
+          			HEHEHEHEEHEHEHEHEH
           		</div>
           	</div>
           </section>

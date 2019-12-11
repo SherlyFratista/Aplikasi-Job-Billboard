@@ -30,7 +30,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-xs navbar-expand-sm navbar-expand-md bg-light static-top">
     <div class="col-9">
-      <a class="navbar-brand" href="homepage.php" style="padding: 0">
+      <a class="navbar-brand" href="index.php" style="padding: 0">
                 <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
             </a>
     </div>
@@ -118,16 +118,16 @@
 
 
   <!-- Masthead -->
-  <header class="masthead text-black text-center" style="background-image: url('images/mahasiswa.jpg'); filter: brightness(60%);">
+  <header class="masthead text-black text-center" style="background-image: url('images/header.png'); filter: brightness(98%);">
     <div class="carousel-title">
-      <h1><span class="total-count" style="color:white">100++ Jobs di Telkom University</span></h1>
+      <h1><span class="total-count">1000++ Jobs di Telkom University</span></h1>
       <h5>
-        <span class="quality-job" style="color:white">Job Berkualitas</span><span class="bullet">&emsp;•&emsp;</span>
-        <span class="quality-emp" style="color:white">Terpercaya</span><span class="bullet">&emsp;•&emsp;</span>
-        <span class="quality-trust" style="color:white">Menambah TAK :)</span>
+        <span class="quality-job">Job Berkualitas</span><span class="bullet">&emsp;•&emsp;</span>
+        <span class="quality-emp">Terpercaya</span><span class="bullet">&emsp;•&emsp;</span>
+        <span class="quality-trust">Menambah TAK :)</span>
       </h5>
       <br>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signup-panel">GET STARTED</button>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalLogin">GET STARTED</button>
     </div>
   </header>
 

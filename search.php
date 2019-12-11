@@ -150,7 +150,7 @@
 												<img class="card-img-top" src="images/<?= $row['poster'] ?>" alt="Card image cap">
 												<div class="card-body">
 													<h5 class="card-title"><?= $row['title'] ?></h5>
-													<p class="card-text"><?= $row['description'] ?></p>
+													
 													<a href="post_detail.php" class="btn btn-primary">Read more</a>
 												</div>
 												<div class="card-footer">
