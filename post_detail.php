@@ -16,6 +16,7 @@
 	$sql = mysqli_query($conn, "SELECT * FROM post  WHERE id = '$id'");
 	$e = mysqli_query($conn, "SELECT*FROM message ");
 	$d = mysqli_query($conn, "SELECT*FROM notif ");
+	$f = mysqli_query($conn, "SELECT*FROM comment ");
 
 ?>
 
@@ -144,8 +145,8 @@
 		<section>
         	<div class="container" style="padding: 0">
 				<form method="POST" action="">
-				    <div class="form-group">
-				        <label class="control-label col-sm-2">Comment</label>
+				    <div class="form-group" id="comment">
+				        <label class="control-label col-sm-2" id="desc">Comment</label>
 				        <div class="col-sm-10">
 				        <textarea class="form-control" id="desc" rows="5" placeholder="Enter Comment here" name="comment"></textarea>
 				        </div>
@@ -160,21 +161,27 @@
 				</form>
         	</div>
 		</section>
+		<br>
+		<?php
+        foreach($f as $data){
+        ?> 
 		<div class="media-grids">
 							
 							<div class="media">
-								<div class="media-left">
-									<a href="#">
-									<img src="images/project8.png" title="One movies" alt=" " />
-									</a>
-								</div>
+								<div class = "container">
 								<div class="media-body">
-								<h5>STEVEN SMITH</h5>
-									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
-									<span>View all posts by :<a href="#"> Admin </a></span>
+								<div class="container">
+								<div class="container">
+								<h5><?= $data["nama"] ?></h5>
+									<p><?= $data["comment"] ?></p>
+									<span><a href="#desc"> Comment </a></span>
+								</div>
+								</div>
+								</div>
 								</div>
 							</div>
     </div>
+	<?php } ?>
     <!-- Footer -->
 
 	<hr style=" margin-top: 20px">
