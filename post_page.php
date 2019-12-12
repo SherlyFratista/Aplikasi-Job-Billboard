@@ -53,7 +53,7 @@
 		</div>
 		<div class="col-xs-6 col-md-6 col-sm-6">
 			<ul class="navbar-nav">
-				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="post_page.php">Write a post</a></li>
+				<li class="nav-item" style="margin-right: 15px"><a class="nav-link" href="homepage.php">Home</a></li>
 				<li class="nav-item" style="margin-right: 15px">
 					<form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
       					<input class="form-control mr-sm-2" type="text" name="name" required="" placeholder="Search" aria-label="Search"> 	
