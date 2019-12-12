@@ -140,25 +140,46 @@
 
 
 
-	<div class="container-fluid" style="margin-bottom: 60px">
+	
+  <div class="container-fluid" style="margin-bottom: 60px">
 	<h2 style="margin-top: 60px">Trending</h2>
 		<div id="myShow" class="carousel slide" data-ride="carousel">
-
-
-			<div class="carousel-inner">
+			<ul class="carousel-indicators">
+				<li data-target="#myShow" data-slide-to="0" class="active"></li>
+				<?php
+			    	foreach($trending as $data){
+			    ?>
+                <li data-target="#myShow" data-slide-to="<?= $data["id"]?>"></li>
                 <?php
-                 foreach($trending as $data){
-                ?>
+            	}
+			    ?>	
+			</ul>
+
+			<div class="carousel-inner" style=" width:100%; height: 500px !important;">
 				<div class="carousel-item active">
+				<?php
+			    	foreach($trending as $data){
+			    			echo '
+			    			</div><div class="carousel-item">
+			    			';
+			    ?>
 					<img src="images/<?= $data["poster"] ?>" class="img-fluid">
 					<div class="carousel-caption">
 	   					<h3><?= $data["title"] ?></h3>
 	    				<p><?= $data["description"] ?></p>
 	  				</div>
-                </div>
-                <?php }?>
+                <?php
+            	}
+			    ?>	
+				</div>
 			</div>
 
+			<a class="carousel-control-prev" href="#myShow" data-slide="prev">
+	    		<span class="carousel-control-prev-icon"></span>
+	  		</a>
+	  		<a class="carousel-control-next" href="#myShow" data-slide="next">
+	    		<span class="carousel-control-next-icon"></span>
+	  		</a>
 		</div>
 	</div>
 
