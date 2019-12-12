@@ -40,7 +40,7 @@
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
 <?php
-    while ($select = mysqli_fetch_assoc($e)){ ?>
+    while ($select = mysqli_fetch_assoc($d)){ ?>
 	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
 		<div class="col-xs-6 col-md-6 col-sm-6">
 			<a class="navbar-brand" href="homepage.php">
@@ -57,9 +57,25 @@
       				</form>
 				  </li>
 
-				
-				  
-				 
+				  <!-- Notifications-->
+				  <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell bg-green"></i><span class="badge bg-red badge-corner">12</span></a>
+                <ul aria-labelledby="notifications" class="dropdown-menu">
+                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                      <div class="notification">
+				  <?php
+                 	foreach($d as $data){
+                	?>
+					<div class="notification-content"><i class="<?= $data["icon"] ?>"></i><?= $data["notif"] ?> </div>
+                        <div class="notification-time"><small><?= $data["waktu"] ?></small></div>
+					  </div></a></li>
+
+                     
+					  <?php }?>
+					  
+                
+                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+                </ul>
+              </li>				 
 
 
               <!-- Messages -->
