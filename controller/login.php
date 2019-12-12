@@ -22,10 +22,6 @@
                 # code...
                 $id = $row['id'];
                 $_SESSION['id'] = $id;
-                $fname = $row['fname'];
-                $_SESSION['fname'] = $fname;
-                $lname = $row['lname'];
-                $_SESSION['lname'] = $lname;
                 $email = $row['email'];
                 $_SESSION['email'] = $email;
                 $status = $row['status'];
