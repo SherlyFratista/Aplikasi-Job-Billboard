@@ -139,10 +139,16 @@
                  	foreach($sql as $data){
                 	?>
           		<div class="container" style="padding: 20px 20px; border-radius: 20px; box-shadow: 0px 0px 10px -6px" align="center">
-                <img src="images/<?= $data["Avatar"] ?>" class="rounded-circle" style="width: 300px;" height="300px;" alt="avatar"></a> 
+              <?php if (file_exists('images/'. $data["avatar"] .'')) { ?>
+                  <!-- $path = 'images/'. $data["avatar"] .''; -->
+                  <img src="images/<?= $data["avatar"] ?>" class="rounded-circle" style="width: 300px;" height="300px;" alt="avatar"></a>
+              <?php }else{ ?>
+                  <!-- $path = 'images/profil.jpg'; -->
+                  <img src="images/profil.jpg" class="rounded-circle" style="width: 300px;" height="300px;" alt="avatar"></a>
+              <?php } ?> 
                  <h2><br><?php echo $user; ?></h2>
                  <h2><?= $data["email"] ?></h2>
-                 <h2><?= $data["About"] ?></h2>
+                 <h2><?= $data["about"] ?></h2>
           		</div>
           	</div>
           </section>
