@@ -8,7 +8,10 @@
                     alert("Info!, You must login first!");
                     window.location.assign("index.php");
                 </script>';
-	}
+    }
+    
+    $months = array("January", "Februari", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    
     $user = $_SESSION['user'];
     $status = $_SESSION['status'];
     $e = mysqli_query($conn, "SELECT*FROM message ");
@@ -118,8 +121,13 @@
                                            
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="lname">Deadline</label>
-                            <div class="col-sm-10">          
-                            <input type="text" class="form-control" id="deadline" placeholder="Enter Deadline Here" name="deadline" required>
+                            <div class="col-sm-10">
+                            <select class="form-control" id="deadline" name="deadline" required>
+                                <option value="">-- Choose One --</option>
+                                <?php foreach ($months as $month) { ?>
+							        <option value="<?= $month?>"><?= $month?></option>
+						        <?php	} ?>
+                            </select>
                             </div>
                         </div>
                                             
@@ -133,7 +141,12 @@
                         <div class="form-group">
                             <label class="control-label col-sm-2">Category</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="judul" placeholder="Enter Category Here" name="category" required>
+                            <select class="form-control" id="judul" name="category" required>
+                                <option value="">-- Choose One --</option>
+                                <option value="Project">Project</option>
+                                <option value="Asisten">Asisten</option>
+                                <option value="Tutor">Tutor</option>
+                            </select>
                             </div>
                         </div>
                                             
