@@ -89,7 +89,7 @@
 				<li class="nav-item dropdown">
 				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
+            <a class="dropdown-item" href="homepage.php">Home</a>
 						<a class="dropdown-item" href="controller/logout.php">Logout</a>
 					</div>
 				</li>
