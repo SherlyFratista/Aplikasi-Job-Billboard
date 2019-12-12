@@ -11,9 +11,8 @@
 	}
 	$user = $_SESSION['user'];
 	$status = $_SESSION['status'];
+	$months = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
 
-	
-	$months = array("January", "Februari", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 
 	$result = mysqli_query($conn, "SELECT * FROM post");
 	$project = mysqli_query($conn, "SELECT * FROM post WHERE kategori LIKE '%Project%' ");
@@ -40,7 +39,7 @@
 </head>
 <body class="text-dark" style="background-color: #f4f4f4">
 <?php
-    while ($select = mysqli_fetch_assoc($d)){ ?>
+    while ($select = mysqli_fetch_assoc($e)){ ?>
 	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
 		<div class="col-xs-6 col-md-6 col-sm-6">
 			<a class="navbar-brand" href="homepage.php">
@@ -57,25 +56,9 @@
       				</form>
 				  </li>
 
-				  <!-- Notifications-->
-				  <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell bg-green"></i><span class="badge bg-red badge-corner">12</span></a>
-                <ul aria-labelledby="notifications" class="dropdown-menu">
-                  <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                      <div class="notification">
-				  <?php
-                 	foreach($d as $data){
-                	?>
-					<div class="notification-content"><i class="<?= $data["icon"] ?>"></i><?= $data["notif"] ?> </div>
-                        <div class="notification-time"><small><?= $data["waktu"] ?></small></div>
-					  </div></a></li>
-
-                     
-					  <?php }?>
-					  
-                
-                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
-                </ul>
-              </li>				 
+				
+				  
+				 
 
 
               <!-- Messages -->
@@ -103,7 +86,7 @@
 				<li class="nav-item dropdown">
 				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="controller/redirect_profile.php">Profile</a>
+						<a class="dropdown-item" href="user_dashboard.php?id=<?=$data['id']?>">Profile</a>
 						<a class="dropdown-item" href="controller/logout.php">Logout</a>
 					</div>
 				</li>
@@ -111,7 +94,7 @@
 		</div>
 	</nav>
 
-			<!-- Modal Filter -->
+		<!-- Modal Filter -->
 		<div class="modal fade" id="modalFilter">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content" style="padding: 20px 0px">
@@ -131,7 +114,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-primary" type="submit" name="submit" value="submit" style="width: 100%">Search</button>
+				<button class="btn btn-primary" type="submit" name="submit" value="submit" style="width: 100%">Filter</button>
 			</form>
         </div>
       </div>
@@ -141,46 +124,25 @@
 
 
 
-	
-  <div class="container-fluid" style="margin-bottom: 60px">
+	<div class="container-fluid" style="margin-bottom: 60px">
 	<h2 style="margin-top: 60px">Trending</h2>
 		<div id="myShow" class="carousel slide" data-ride="carousel">
-			<ul class="carousel-indicators">
-				<li data-target="#myShow" data-slide-to="0" class="active"></li>
-				<?php
-			    	foreach($trending as $data){
-			    ?>
-                <li data-target="#myShow" data-slide-to="<?= $data["id"]?>"></li>
-                <?php
-            	}
-			    ?>	
-			</ul>
 
-			<div class="carousel-inner" style=" width:100%; height: 500px !important;">
+
+			<div class="carousel-inner">
+                <?php
+                 foreach($trending as $data){
+                ?>
 				<div class="carousel-item active">
-				<?php
-			    	foreach($trending as $data){
-			    			echo '
-			    			</div><div class="carousel-item">
-			    			';
-			    ?>
 					<img src="images/<?= $data["poster"] ?>" class="img-fluid">
 					<div class="carousel-caption">
 	   					<h3><?= $data["title"] ?></h3>
 	    				<p><?= $data["description"] ?></p>
 	  				</div>
-                <?php
-            	}
-			    ?>	
-				</div>
+                </div>
+                <?php }?>
 			</div>
 
-			<a class="carousel-control-prev" href="#myShow" data-slide="prev">
-	    		<span class="carousel-control-prev-icon"></span>
-	  		</a>
-	  		<a class="carousel-control-next" href="#myShow" data-slide="next">
-	    		<span class="carousel-control-next-icon"></span>
-	  		</a>
 		</div>
 	</div>
 
@@ -194,8 +156,8 @@
 					<h4>Project</h4>
 				</div>
 				<div class="col-xs-2 col-sm-2 col-md-2">
-					<a class="btn btn-secondary" data-toggle="modal" data-target="#modalLogin">Sort By</a>
-					<a class="btn btn-secondary" data-toggle="modal" data-target="#modalFilter">Filter</a>
+					<a class="btn btn-secondary" style="color:white;" data-toggle="modal" data-target="#modalLogin">Sort By</a>
+					<a class="btn btn-secondary" style="color:white;"  data-toggle="modal" data-target="#modalFilter">Filter</a>
 				</div>
 			</div>
 	    </div>

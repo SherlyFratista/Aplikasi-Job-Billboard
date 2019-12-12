@@ -10,8 +10,8 @@
                 </script>';
     }
     
-    $months = array("January", "Februari", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-    
+    $months = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+ 
     $user = $_SESSION['user'];
     $status = $_SESSION['status'];
     $e = mysqli_query($conn, "SELECT*FROM message ");

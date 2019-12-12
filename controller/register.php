@@ -9,7 +9,7 @@
       $pass = $_POST['pass'];
       $status = $_POST['status'];
 
-      $sql = mysqli_query($conn, "INSERT INTO user VALUES('','{$email}','{$user}','{$pass}','{$status}')");
+      $sql = mysqli_query($conn, "INSERT INTO user VALUES('','{$email}','{$user}','{$pass}','{$status}','','')");
 
       if ($sql) {
         # code...

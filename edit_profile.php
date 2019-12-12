@@ -10,23 +10,20 @@
                 </script>';
 	}
   $user = $_SESSION['user'];
+  $id = $_SESSION['id'];
   $status = $_SESSION['status'];
-
-
+  $e = mysqli_query($conn, "SELECT*FROM message ");
+  $s = mysqli_query($conn, "SELECT * FROM user  WHERE id = '$id'");
 ?>
 
 <?php
 require ('config/connect.php');
-$fname = $_SESSION['fname'];
 $id = $_SESSION['id'];
 $user = $_SESSION['user'];
 $email = $_SESSION['email'];
-$lname = $_SESSION['lname'];
-$about = $_SESSION['about'];
-$avatar = $_SESSION['avatar'];
 
 
-$sql = mysqli_query($conn, "INSERT INTO user VALUES('','{$avatar}','{$about}')");
+
 ?>
 
 <!DOCTYPE html>
@@ -56,15 +53,51 @@ $sql = mysqli_query($conn, "INSERT INTO user VALUES('','{$avatar}','{$about}')")
   </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm bg-light sticky-top" style="padding: 8px">
-		<div class="col-9">
-			<a class="navbar-brand" href="homepage.php" style="padding: 0">
-                <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
+<?php
+    while ($select = mysqli_fetch_assoc($e)){ ?>
+	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
+		<div class="col-xs-6 col-md-6 col-sm-6">
+			<a class="navbar-brand" href="homepage.php">
+                <img src ="images/logojb (2).png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
             </a>
 		</div>
-		<div class="col-3">
+		<div class="col-xs-6 col-md-6 col-sm-6">
 			<ul class="navbar-nav">
-				<li class="nav-item" style="margin-right: 15px; color : #007BFF"><a class="nav-link" href="post_page.php">Write a post</a></li>
+				<li class="nav-item" style="margin-right: 15px; color:blue"><a class="nav-link" href="post_page.php">Write a post</a></li>
+				<li class="nav-item" style="margin-right: 15px">
+					<form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
+      					<input class="form-control mr-sm-2" type="text" name="name" required="" placeholder="Search" aria-label="Search"> 	
+						<input class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="submit" value="Go">
+      				</form>
+				  </li>
+
+				
+				  
+				 
+
+
+              <!-- Messages -->
+			  
+              <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fab fa-envelope bg-blue"></i><span class="badge bg-orange badge-corner">10</span></a>
+                
+				<ul aria-labelledby="notifications" class="dropdown-menu">
+				<?php
+                 	foreach($e as $data){
+                	?>
+                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+				  
+                   
+                      <div class="msg-body">
+                        <h6 style="font-size:14px;">You have a message from <?= $data["user"] ?></h6>
+						<p style="font-size:12px;"><?= $data["message"] ?></p>
+					  </div></a>
+					  <?php }?>
+					  </li>
+					  <?php }?>  
+                
+                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+                </ul>
+              </li>
 				<li class="nav-item dropdown">
 				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
 					<div class="dropdown-menu">
@@ -92,7 +125,7 @@ $sql = mysqli_query($conn, "INSERT INTO user VALUES('','{$avatar}','{$about}')")
           <ul class="list-unstyled">
             <li><a href="user_dashboard.php"> <i class="icon-home"></i>My Profile</a></li>
             <li class="active"><a href="edit_profile.php"> <i class="icon-grid"></i>Edit Profile</a></li>
-            <li><a href="user_post.php"> <i class="icon-padnote"></i>My Post</a></li>
+            <li><a href="user_post.php"> <i class="icon-padnote"></i>Inbox</a></li>
         </nav>
 
         <div class="content-inner">
@@ -105,6 +138,8 @@ $sql = mysqli_query($conn, "INSERT INTO user VALUES('','{$avatar}','{$about}')")
           
           <section>
           	<div class="container-fluid">
+			  <?php
+    while ($select = mysqli_fetch_assoc($s)){ ?>
           		<div class="container" style="padding: 20px 20px; border-radius: 20px; box-shadow: 0px 0px 10px -6px">
           			<form method="POST" action="" enctype="" style="margin: 40px 20px">
 						<div class="form-group row">
@@ -116,24 +151,9 @@ $sql = mysqli_query($conn, "INSERT INTO user VALUES('','{$avatar}','{$about}')")
 							</div>
 						</div>
 
-						<div class="form-group row">
-							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
-								<label class="control-label" for="First Name">First Name</label>
-							</div>
-							<div class="col-xs-10 col-md-10 col-sm-10">
-								<input type="text" class="form-control" placeholder="First Name" name="fname"  value="<?php echo $fname; ?>"></input>
-							</div>
-								
-						</div>
-						<div class="form-group row">
-							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
-								<label class="control-label" for="Last Name">Last Name</label>
-							</div>
-							<div class="col-xs-10 col-md-10 col-sm-10">
-								<input type="text" class="form-control" placeholder="Last Name" name="lname"  value="<?php echo $lname; ?>"></input>
-							</div>
-								
-						</div>
+						
+							
+						
 						<div class="form-group row">
 							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
 								<label class="control-label" for="Email">Email</label>
@@ -144,13 +164,16 @@ $sql = mysqli_query($conn, "INSERT INTO user VALUES('','{$avatar}','{$about}')")
 								
 						</div>
 						<div class="form-group row">
+						<?php
+                 	foreach($s as $data){
+                	?>
 							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
 								<label class="control-label" for="About">About</label>
 							</div>
 							<div class="col-xs-10 col-md-10 col-sm-10">
-								<textarea class="form-control" name="about"></textarea>
+							<input type="email" class="form-control" placeholder="about me" name="about"  value="<?= $data["About"] ?>"></input>
 							</div>
-								
+							<?php }?>  	
 						</div>
 						<div class="form-group row">
 							<div class="col-xs-2 col-md-2 col-sm-2 col-form-label">
@@ -166,13 +189,14 @@ $sql = mysqli_query($conn, "INSERT INTO user VALUES('','{$avatar}','{$about}')")
 								<button type="submit" class="btn btn-success">Save Change</button>
 							</div>	
 							<div class="col">
-								<a href="user_profile.php" class="btn btn-secondary" style="float: right;">Cancel</a>
+								<a href="edit_profile.php" class="btn btn-secondary" style="float: right;">Cancel</a>
 							</div>
 						</div>
 					</form>
           		</div>
           	</div>
           </section>
+		  <?php }?>  
     	</div>
     </div>
   

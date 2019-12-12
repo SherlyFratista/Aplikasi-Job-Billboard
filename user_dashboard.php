@@ -8,22 +8,18 @@
                     alert("Info!, You must login first!");
                     window.location.assign("index.php");
                 </script>';
-	}
+  }
+  
   $user = $_SESSION['user'];
   $status = $_SESSION['status'];
-
+  $id = $_SESSION['id'];
+  
+ 
+  $sql = mysqli_query($conn, "SELECT * FROM user  WHERE id = '$id'");
+  $e = mysqli_query($conn, "SELECT*FROM message ");
 ?>
 
-<?php
-require ('config/connect.php');
-$fname = $_SESSION['fname'];
-$id = $_SESSION['id'];
-$user = $_SESSION['user'];
-$email = $_SESSION['email'];
-$lname = $_SESSION['lname'];
-$avatar = $_SESSION['avatar'];
-$about = $_SESSION['about'];
-?>
+
 
 
 <!DOCTYPE html>
@@ -51,19 +47,56 @@ $about = $_SESSION['about'];
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.ico">
+    
 
   </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm bg-light sticky-top" style="padding: 8px">
-		<div class="col-9">
-			<a class="navbar-brand" href="homepage.php" style="padding: 0">
-                <img src ="images/logojb (2).png" href="index.php" width ="160px" height="45px" style="padding: 0">
+<?php
+    while ($select = mysqli_fetch_assoc($e)){ ?>
+	<nav class="navbar navbar-expand-sm bg-light sticky-top" style="">
+		<div class="col-xs-6 col-md-6 col-sm-6">
+			<a class="navbar-brand" href="homepage.php">
+                <img src ="images/logojb (2).png" class="navbar-brand" href="homepage.php" width ="200px" height="80px">
             </a>
 		</div>
-		<div class="col-3">
+		<div class="col-xs-6 col-md-6 col-sm-6">
 			<ul class="navbar-nav">
-				<li class="nav-item" style="margin-right: 15px; color : #007BFF"><a class="nav-link" href="post_page.php">Write a post</a></li>
+				<li class="nav-item" style="margin-right: 15px; color:blue;"><a class="nav-link" href="post_page.php">Write a post</a></li>
+				<li class="nav-item" style="margin-right: 15px">
+					<form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
+      					<input class="form-control mr-sm-2" type="text" name="name" required="" placeholder="Search" aria-label="Search"> 	
+						<input class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="submit" value="Go">
+      				</form>
+				  </li>
+
+				
+				  
+				 
+
+
+              <!-- Messages -->
+			  
+              <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fab fa-envelope bg-blue"></i><span class="badge bg-orange badge-corner">10</span></a>
+                
+				<ul aria-labelledby="notifications" class="dropdown-menu">
+				<?php
+                 	foreach($e as $data){
+                	?>
+                  <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+				  
+                   
+                      <div class="msg-body">
+                        <h6 style="font-size:14px;">You have a message from <?= $data["user"] ?></h6>
+						<p style="font-size:12px;"><?= $data["message"] ?></p>
+					  </div></a>
+					  <?php }?>
+					  </li>
+					  <?php }?>  
+                
+                  <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+                </ul>
+              </li>
 				<li class="nav-item dropdown">
 				<a class="btn btn-primary dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown"><?= $user?></a>
 					<div class="dropdown-menu">
@@ -102,16 +135,21 @@ $about = $_SESSION['about'];
 
           <section>
           	<div class="container-fluid">
+            <?php
+                 	foreach($sql as $data){
+                	?>
           		<div class="container" style="padding: 20px 20px; border-radius: 20px; box-shadow: 0px 0px 10px -6px" align="center">
-                <img src="images/<?php echo $user; ?>/<?php echo $avatar; ?>" class="rounded-circle" style="width: 300px;" height="300px;" alt="profile"></a>
-                 <h2><?php echo $user; ?></h2>
-                 <h2><?php echo $email; ?></h2>
-                 <h2><?php echo $about; ?></h2>
+                <img src="images/<?= $data["Avatar"] ?>" class="rounded-circle" style="width: 300px;" height="300px;" alt="avatar"></a> 
+                 <h2><br><?php echo $user; ?></h2>
+                 <h2><?= $data["email"] ?></h2>
+                 <h2><?= $data["About"] ?></h2>
           		</div>
           	</div>
           </section>
     </div>
     </div>
+    <?php } ?>
+    
           
           <!-- <section>
           	<div class="container-fluid">
