@@ -111,8 +111,8 @@
 		</div>
 	</nav>
 
-		<!-- Modal Filter -->
-		<div class="modal fade" id="modalFilter">
+			<!-- Modal Filter -->
+			<div class="modal fade" id="modalFilter">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content" style="padding: 20px 0px">
         <div class="modal-header">
@@ -124,10 +124,19 @@
             <div class="form-group">
               <select class="form-control" name="filterKey" required>
 					<option value="">-- Filter --</option>
-					<?php foreach ($months as $month) { ?>
-						<option value="<?= $month?>"><?= $month?></option>
-					<?php	} ?>
-			  </select>
+											<option value="January">January</option>
+											<option value="Februari">Februari</option>
+											<option value="March">March</option>
+											<option value="April">April</option>
+											<option value="May">May</option>
+											<option value="June">June</option>
+											<option value="July">July</option>
+											<option value="August">August</option>
+											<option value="September">September</option>
+											<option value="October">October</option>
+											<option value="November">November</option>
+											<option value="December">December</option>
+								  </select>
             </div>
         </div>
         <div class="modal-footer">
@@ -137,6 +146,7 @@
       </div>
     </div>
   </div>
+
 
 
 
