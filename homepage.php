@@ -112,7 +112,7 @@
 	</nav>
 
 			<!-- Modal Filter -->
-			<div class="modal fade" id="modalFilter">
+		<div class="modal fade" id="modalFilter">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content" style="padding: 20px 0px">
         <div class="modal-header">
@@ -120,28 +120,19 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="filter.php">
-            <div class="form-group">
-              <select class="form-control" name="filterKey" required>
-					<option value="">-- Filter --</option>
-											<option value="January">January</option>
-											<option value="Februari">Februari</option>
-											<option value="March">March</option>
-											<option value="April">April</option>
-											<option value="May">May</option>
-											<option value="June">June</option>
-											<option value="July">July</option>
-											<option value="August">August</option>
-											<option value="September">September</option>
-											<option value="October">October</option>
-											<option value="November">November</option>
-											<option value="December">December</option>
-								  </select>
-            </div>
-        </div>
-        <div class="modal-footer">
-              <button class="btn btn-primary" type="submit" name="submit" value="submit" style="width: 100%">Search</button>
-          </form>
+			<form method="POST" action="filter.php">
+				<div class="form-group">
+				<select class="form-control" name="filterKey" required>
+						<option value="">-- Filter --</option>
+						<?php foreach ($months as $month) { ?>
+							<option value="<?= $month?>"><?= $month?></option>
+						<?php	} ?>
+				</select>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" type="submit" name="submit" value="submit" style="width: 100%">Search</button>
+			</form>
         </div>
       </div>
     </div>
@@ -199,12 +190,16 @@
 	<div class="container-fluid" style="; padding: 30px 0px">
 		<div class="container" style="padding: 0px 10px; margin-bottom: 20px">
 			<div class="row">
-				<div class="col-xs-11 col-sm-11 col-md-11" style="margin-left:20px;">
+				<div class="col-xs-10 col-sm-10 col-md-10">
 					<h4>Project</h4>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2">
+					<a class="btn btn-secondary" data-toggle="modal" data-target="#modalLogin">Sort By</a>
+					<a class="btn btn-secondary" data-toggle="modal" data-target="#modalFilter">Filter</a>
 				</div>
 			</div>
 	    </div>
-	    
+		
 		<div id="demo" class="carousel slide" data-ride="carousel">
 			<div class="container carousel-inner" style="padding: 0px">
 			    <div class="carousel-item active" style="margin: 0px 4px">
