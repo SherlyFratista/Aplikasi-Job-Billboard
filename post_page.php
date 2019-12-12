@@ -153,7 +153,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-2">Poster</label>
                             <div class="col-sm-10">
-                            <input type="file" id="BSbtninfo" class="form-control" name="file" required></input>
+                            <input type="file" id="BSbtninfo" class="form-control" name="file"></input>
                             </div>
                         </div>
                                             

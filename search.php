@@ -124,7 +124,7 @@
 							$make = '<h4>You must type a word to search!</h4>';
 						}else{
 							$make = '<h4>No match found!</h4>';
-							$sele = "SELECT * FROM post WHERE title LIKE '%$name%' OR kategori LIKE '%$name%' OR description LIKE '%$name%'";
+							$sele = "SELECT * FROM post WHERE title LIKE '%$name%' OR kategori LIKE '%$name%' OR description LIKE '%$name%' ASC";
 							$result = mysqli_query($conn, $sele);
 
 							if ($mak = mysqli_num_rows($result) > 0) {

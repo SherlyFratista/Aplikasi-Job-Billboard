@@ -3,13 +3,21 @@
     session_start();
 
     if (isset($_POST['submit'])) {
-        $name = $_FILES['file']['name'];
         $title = $_POST['title'];
         $dedlen = $_POST['deadline'];
         $desc = $_POST['description'];
         $category = $_POST['category'];
         $target_dir = "../images/";
-        $target_file = $target_dir . basename($_FILES["file"]["name"]);
+
+        if (!isset($_POST['file'])) {
+            # code...
+            $name = "tutor2.jpg";
+            $target_file = $target_dir . basename($name);
+        }else{
+            # code...
+            $name = $_FILES['file']['name'];
+            $target_file = $target_dir . basename($_FILES["file"]["name"]);
+        }
 
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         $ext = array("jpg","jpeg","png","gif");

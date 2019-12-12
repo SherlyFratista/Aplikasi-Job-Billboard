@@ -94,35 +94,32 @@
 		</div>
 	</nav>
 
-		<!-- Modal Filter -->
-		<div class="modal fade" id="modalFilter">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content" style="padding: 20px 0px">
-        <div class="modal-header">
-          <h4 class="modal-title">Filter</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-			<form method="POST" action="filter.php">
-				<div class="form-group">
-				<select class="form-control" name="filterKey" required>
-						<option value="">-- Filter --</option>
-						<?php foreach ($months as $month) { ?>
-							<option value="<?= $month?>"><?= $month?></option>
-						<?php	} ?>
-				</select>
+	<!-- Modal Filter -->
+	<div class="modal fade" id="modalFilter">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content" style="padding: 20px 0px">
+				<div class="modal-header">
+				<h4 class="modal-title">Filter</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-primary" type="submit" name="submit" value="submit" style="width: 100%">Filter</button>
-			</form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
+				<div class="modal-body">
+				<form method="POST" action="filter.php">
+					<div class="form-group">
+					<select class="form-control" name="filterKey" required>
+							<option value="">-- Filter --</option>
+							<?php foreach ($months as $month) { ?>
+								<option value="<?= $month?>"><?= $month?></option>
+							<?php	} ?>
+					</select>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" type="submit" name="submit" value="submit" style="width: 100%">Filter</button>
+				</form>
+				</div>
+			</div>	
+		</div>
+	</div>
 
 	<div class="container-fluid" style="margin-bottom: 60px">
 	<h2 style="margin-top: 60px">Trending</h2>
@@ -156,7 +153,6 @@
 					<h4>Project</h4>
 				</div>
 				<div class="col-xs-2 col-sm-2 col-md-2">
-					<a class="btn btn-secondary" style="color:white;" data-toggle="modal" data-target="#modalLogin">Sort By</a>
 					<a class="btn btn-secondary" style="color:white;"  data-toggle="modal" data-target="#modalFilter">Filter</a>
 				</div>
 			</div>

@@ -12,7 +12,7 @@
 	$user = $_SESSION['user'];
 	$status = $_SESSION['status'];
 
-	$user = $_GET['user'];
+	$id = $_GET['id'];
 	$sql = mysqli_query($conn, "SELECT * FROM post  WHERE id = '$id'");
 	$e = mysqli_query($conn, "SELECT*FROM message ");
 	$d = mysqli_query($conn, "SELECT*FROM notif ");

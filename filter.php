@@ -104,8 +104,8 @@
 				   <li class="breadcrumb-item active">Filter Result</li>
 			   </ul>
 	   		</div>
-			   </div>
        </header>
+	</div>
 
        <section>
 			<div class="container">
@@ -127,7 +127,7 @@
 
 							if ($mak = mysqli_num_rows($result) > 0) {
 								# code...
-								echo'<h2> Search Result</h2>';
+								echo'<h2> Search Result</h2><br>';
 								echo '
 									<div class="row overflow-auto">';
 								while ($row = mysqli_fetch_assoc($result)) {
