@@ -141,7 +141,7 @@
 													<a href="post_detail.php" class="btn btn-primary">Read more</a>
 												</div>
 												<div class="card-footer">
-													<small class="text-muted">Deadline <?= $data["deadline"] ?></small>
+													<small class="text-muted">Deadline <?= $row["deadline"] ?></small>
 												</div>
 											</div>
 										</div>
